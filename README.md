@@ -7,9 +7,13 @@ The out of box tool for you to write and manage your code in the right posture /
 > 关于更多背景细节请阅读文章[《以正确的姿势编写和管理代码》](https://github.com/WGrape/Blog/issues/260)
 
 ## 介绍
-本项目会提供一系列开箱可用的"装备"，快速开始以正确的"姿势"编写和管理代码。
+本项目会提供一系列开箱可用的"装备"，让你快速开始以正确的"姿势"编写和管理代码。
 
 ## 下载
+
+```bash
+git clone https://github.com/WGrape/posture.git
+```
 
 ## 使用
 
