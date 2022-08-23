@@ -1,5 +1,5 @@
 # posture
-Writing and managing your code in the right posture / 以正确的姿势编写和管理代码
+The out of box tool for you to write and manage your code in the right posture / 一个可以让你以正确的姿势编写和管理代码的开箱即用工具
 
 ## 背景
 在团队协作开发时，由于习惯不同，经常遇到代码"百花齐放"的情况。对于代码的管理，可能也只是基于```git```版本控制做一些仅限于```pull/commit/push```的简单操作，导致出现代码冲突、拉错分支、提交错分支、合并错误等一系列混乱的操作。这些问题都暴露出我们对代码的编写和管理方面很薄弱，不仅影响效率而且增加风险。
