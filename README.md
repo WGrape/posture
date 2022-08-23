@@ -1,2 +1,15 @@
 # posture
-Writing and managing your code in the right posture.
+Writing and managing your code in the right posture / 以正确的姿势编写和管理代码
+
+## 背景
+在团队协作开发时，由于习惯不同，经常遇到代码"百花齐放"的情况。对于代码的管理，可能也只是基于```git```版本控制做一些仅限于```pull/commit/push```的简单操作，导致出现代码冲突、拉错分支、提交错分支、合并错误等一系列混乱的操作。这些问题都暴露出我们对代码的编写和管理方面很薄弱，不仅影响效率而且增加风险。
+
+> 关于更多背景细节请阅读文章[《以正确的姿势编写和管理代码》](https://github.com/WGrape/Blog/issues/260)
+
+## 介绍
+本项目会提供一系列开箱可用的"装备"，快速开始以正确的"姿势"编写和管理代码。
+
+## 下载
+
+## 使用
+
