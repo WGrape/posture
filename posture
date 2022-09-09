@@ -1,1 +1,12 @@
 #!/bin/sh
+currentDir=$(pwd)
+. $currentDir/include/function.sh
+COMMAND=$1
+
+if [ "${COMMAND}" == "hooking" ]; then
+  hooking $currentDir
+fi
+
+if [ "${COMMAND}" == "init" ]; then
+  init
+fi
