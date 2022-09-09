@@ -2,3 +2,15 @@
 
 echo "欢迎使用posture"
 echo "温馨提示: 提交前请确认分支是否正确哦~"
+
+b=''
+i=0
+while [ $i -le 10 ]
+do
+ printf "[%-50s] %d%% \r" "$b" "$i";
+ sleep 1
+ ((i=i+2))
+ b+='#'
+done
+echo
+
