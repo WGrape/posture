@@ -21,7 +21,15 @@ hooking(){
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
 }
 
-checklang(){
+checkConfig(){
+  checkLang
+  if [ $? -ne 0 ]; then
+      echo "configuration of lang is error: ${lang}"
+      exit 1
+  fi
+}
+
+checkLang(){
   if [ "${lang}" == "go" ]; then
     return 0
   elif [ "${lang}" == "php" ]; then

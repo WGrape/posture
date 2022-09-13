@@ -3,21 +3,13 @@ currentDir=$(pwd)
 . $currentDir/include/function.sh
 COMMAND=$1
 
-checklang
-if [ $? -ne 0 ]; then
-    echo "configuration set error"
-    exit 1
-fi
-
 if [ "${COMMAND}" == "hooking" ]; then
   hooking $currentDir
-fi
-
-if [ "${COMMAND}" == "adjust" ]; then
-  adjust
-fi
-
-if [ "${COMMAND}" == "info" ]; then
+elif [ "${COMMAND}" == "adjust" ]; then
+  checkConfig && adjust
+elif [ "${COMMAND}" == "info" ]; then
   echo "The list of information"
   echo "> lang = ${lang}"
+else
+  echo "Unknown command: ${COMMAND}"
 fi
