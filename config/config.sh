@@ -1,3 +1,3 @@
 #!/bin/sh
 
-lang=go
+lang="go"

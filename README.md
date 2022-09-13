@@ -7,18 +7,30 @@ The out of box tool for you to write and manage your code in the right posture /
 > 关于更多背景细节请阅读文章[《以正确的姿势编写和管理代码》](https://github.com/WGrape/Blog/issues/260)
 
 ## 二、项目介绍
-本项目会提供一系列开箱可用的"装备"，让你快速开始以正确的"姿势"编写和管理代码。
+本项目会提供一系列开箱可用的"工具"，让你快速开始以正确的"姿势"编写和管理代码。
 
 ## 三、下载安装
 
 你可以先通过以下命令完成下载安装操作，如果出现```install successfully```提示，则说明安装成功。
 
 ```bash
-git clone https://github.com/WGrape/posture.git && cd posture && chmod +x install.sh && ./install.sh
+git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh
 ```
 
-项目支持```go/php/java```三种语言，如果你的项目使用的是go语言，那么所有的命令都请使用```goposture```。如果你的项目使用的是php语言，那么所有的命令都请使用```phpposture```
+项目支持```go/php/java```三种语言，在```config/config.sh```文件中配置```lang```项目语言即可
 
-为了简化操作，可以在```config.sh```文件中配置```lang```项目语言，这样无论什么语言，所有的命令都可以使用```posture```
+## 四、如何使用
 
-## 四、开始使用
+### 1、调整姿势
+如果需要解决代码不规范的问题，先使用命令```cd xxx```切至你的项目目录下，然后再使用如下命令即可。
+
+```bash
+posture adjust
+```
+
+### 2、全局钩子
+通过如下命令即可设置全局钩子，这样无论在哪个项目下，在使用```git commit/git push```命令时，钩子都会生效。
+
+```bash
+posture sethook
+```

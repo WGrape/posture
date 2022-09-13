@@ -1,5 +1,12 @@
-init(){
-  echo "posture working"
+#!/bin/sh
+currentDir=$(pwd)
+. $currentDir/config/config.sh
+
+adjust(){
+  echo "posture is adjusting ..."
+  echo "> your lang configuration is ${lang}"
+  cp $currentDir/editor/${lang}/.editorconfig ./
+  echo "> done"
 }
 
 hooking(){
@@ -12,6 +19,17 @@ hooking(){
   git config --global core.hooksPath ${projectDir}/hooks
   chmod a+x ${projectDir}/hooks/pre-push
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
+}
+
+checklang(){
+  if [ "${lang}" == "go" ]; then
+    return 0
+  elif [ "${lang}" == "php" ]; then
+    return 0
+  elif [ "${lang}" == "java" ]; then
+    return 0
+  fi
+  return 1
 }
 
 loading(){
