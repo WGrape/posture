@@ -3,12 +3,9 @@ if [ "${POSTUREPATH}" == "" ]; then
   echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
   exit 1
 fi
-cd $POSTUREPATH
+. $POSTUREPATH/include/function.sh
 
-currentDir=$(pwd)
-. $currentDir/include/function.sh
 COMMAND=$1
-
 if [ "${COMMAND}" == "sethook" ]; then
   sethook $currentDir
 elif [ "${COMMAND}" == "adjust" ]; then
