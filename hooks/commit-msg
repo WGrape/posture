@@ -3,13 +3,12 @@ currentDir=$(pwd)
 . $currentDir/include/function.sh
 
 printLogo
-
-echo "Warm tips: please make sure the branch is correct before committing"
+echo "温馨提示: 请务必在提交代码前确认分支是否正确 (Warm tips: please make sure the branch is correct before committing)"
 
 BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
-echo "> your commit branch: \033[33m${BRANCH_NAME}\033[0m"
+echo "> 提交本地 (your commit branch): \033[33m${BRANCH_NAME}\033[0m"
 
 ORIGIN_COMMIT=$(cat $1)
-echo "> your commit msg: \033[33m${ORIGIN_COMMIT}\033[0m"
+echo "> 提交信息 (your commit msg): \033[33m${ORIGIN_COMMIT}\033[0m"
 
 loading
