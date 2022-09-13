@@ -1,5 +1,5 @@
 #!/bin/sh
-. $POSTUREPATH/include/function.sh
+. $POSTUREPATH/config/config.sh
 
 adjust(){
   echo "正在调整中 ... (posture is adjusting ...)"
