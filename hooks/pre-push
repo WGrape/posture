@@ -3,22 +3,21 @@ currentDir=$(pwd)
 . $currentDir/include/function.sh
 
 printLogo
-
-echo "Warm tips: please make sure the branch is correct before pushing"
+echo "温馨提示: 请务必在提交前确认提交分支是否正确 (Warm tips: please make sure the branch is correct before pushing)"
 
 while read local_ref local_sha remote_ref remote_sha
 do
   BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-	echo "> your local branch: \033[33m${BRANCH_NAME}\033[0m"
+	echo "> 本地分支 (your local branch): \033[33m${BRANCH_NAME}\033[0m"
 
   REMOTE_REF=${remote_ref}
   remote_ref_slices=(${REMOTE_REF//// })
   REMOTE_NAME=${remote_ref_slices[2]}
-	echo "> your push branch: \033[33m${REMOTE_NAME}\033[0m"
+	echo "> 推送分支 (your push branch): \033[33m${REMOTE_NAME}\033[0m"
 
 	if [ ${BRANCH_NAME} != ${REMOTE_NAME} ]
 	then
-		echo "The push branch not match local branch, has been stopped !"
+		echo "本地分支和推送的远程分支不一致，已终止! (The push branch not match local branch, has been stopped !)"
 		exit 1
 	fi
 done

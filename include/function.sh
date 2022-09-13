@@ -3,15 +3,15 @@ currentDir=$(pwd)
 . $currentDir/config/config.sh
 
 adjust(){
-  echo "posture is adjusting ..."
-  echo "> your lang configuration is ${lang}"
+  echo "正在调整中 ... (posture is adjusting ...)"
+  echo "> 配置的语言为${lang} (your lang configuration is ${lang})"
   cp $currentDir/editor/${lang}/.editorconfig ./
-  echo "> done"
+  echo "> 完成 (done)"
 }
 
 hooking(){
   if [ $1 == "" ]; then
-    echo "miss the directory param"
+    echo "缺少目录参数 (miss the directory param)"
     exit 1
   fi
 
@@ -20,13 +20,14 @@ hooking(){
   chmod a+x ${projectDir}/hooks/pre-push
   chmod a+x ${projectDir}/hooks/pre-commit
   chmod a+x ${projectDir}/hooks/commit-msg
+  chmod a+x ${projectDir}/hooks/post-merge
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
 }
 
 checkConfig(){
   checkLang
   if [ $? -ne 0 ]; then
-      echo "configuration of lang is error: ${lang}"
+      echo "lang配置错误: ${lang} (configuration of lang is error: ${lang})"
       exit 1
   fi
 }
