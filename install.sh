@@ -1,6 +1,6 @@
 #!/bin/sh
 chmod a+x ./posture
 currentDir=$(pwd)
-sed -a "POSTUREPATH="$currentDir
-sed -a "export PATH=\$PATH:$currentDir"
+echo "export POSTUREPATH=${currentDir}" >> ~/.bash_profile
+echo "export PATH=\$PATH:${currentDir}" >> ~/.bash_profile
 echo "install successfully"
