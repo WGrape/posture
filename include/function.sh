@@ -17,10 +17,11 @@ sethook(){
 
   projectDir=$1
   git config --global core.hooksPath ${projectDir}/hooks
-  chmod a+x ${projectDir}/hooks/pre-push
-  chmod a+x ${projectDir}/hooks/pre-commit
   chmod a+x ${projectDir}/hooks/commit-msg
+  chmod a+x ${projectDir}/hooks/post-checkout
   chmod a+x ${projectDir}/hooks/post-merge
+  chmod a+x ${projectDir}/hooks/pre-commit
+  chmod a+x ${projectDir}/hooks/pre-push
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
 }
 
