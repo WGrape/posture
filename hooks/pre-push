@@ -3,10 +3,7 @@ if [ "${POSTUREPATH}" == "" ]; then
   echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
   exit 1
 fi
-cd $POSTUREPATH
-
-currentDir=$(pwd)
-. $currentDir/include/function.sh
+. $POSTUREPATH/include/function.sh
 
 printLogo
 echo "温馨提示: 请务必在提交前确认提交分支是否正确 (Warm tips: please make sure the branch is correct before pushing)"

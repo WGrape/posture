@@ -3,7 +3,4 @@ if [ "${POSTUREPATH}" == "" ]; then
   echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
   exit 1
 fi
-cd $POSTUREPATH
-
-currentDir=$(pwd)
-. $currentDir/include/function.sh
+. $POSTUREPATH/include/function.sh
