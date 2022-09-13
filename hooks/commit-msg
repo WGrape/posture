@@ -2,13 +2,13 @@
 currentDir=$(pwd)
 . $currentDir/include/function.sh
 
-BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
-ORIGIN_COMMIT=$(cat $1)
-
 echo "欢迎使用posture"
 echo "温馨提示: 提交前请确认分支是否正确哦~"
 
+BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
 echo "> your commit branch: \033[33m${BRANCH_NAME}\033[0m"
+
+ORIGIN_COMMIT=$(cat $1)
 echo "> your commit msg: \033[33m${ORIGIN_COMMIT}\033[0m"
 
 loading
