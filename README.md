@@ -17,12 +17,20 @@ The out of box tool for you to write and manage your code in the right posture /
 git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh
 ```
 
-项目支持```go/php/java```三种语言，在```config/config.sh```文件中配置```lang```项目语言即可
+在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，这样您即可开始使用posture工具。
+
+```bash
+# Here is the configurations of posture
+export POSTUREPATH={{the path of posture installation}}
+export PATH=$PATH:${POSTUREPATH}
+```
 
 ## 四、如何使用
 
-### 1、调整姿势
-如果需要解决代码不规范的问题，先使用命令```cd xxx```切至你的项目目录下，然后再使用如下命令即可。
+### 1、调整规范
+在团队开发前，需要先统一设置代码规范。工具支持```go/php/java```三种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言即可。
+
+先使用命令```cd xxx```切至你的项目目录下，然后再使用如下命令即可。
 
 ```bash
 posture adjust
@@ -33,4 +41,20 @@ posture adjust
 
 ```bash
 posture sethook
+```
+
+## 五、卸载更新
+
+### 1、卸载应用
+如果需要卸载，在执行完以下命令后，手动删除```$POSTUREPATH```目录即可。
+
+```bash
+cd $POSTUREPATH && bash ./uninstall.sh
+```
+
+### 2、版本更新
+为保证您的良好使用体验，建议使用最新版的posture工具，执行以下命令即可完成更新。
+
+```bash
+posture update
 ```
