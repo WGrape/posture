@@ -5,13 +5,21 @@ currentDir=$(pwd)
 echo "欢迎使用posture"
 echo "温馨提示: 提交前请确认分支是否正确哦~"
 
-BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
-echo "> your local branch: \033[33m${BRANCH_NAME}\033[0m"
+while read local_ref local_sha remote_ref remote_sha
+do
+  BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+	echo "> 本地分支: \033[33m${BRANCH_NAME}\033[0m"
 
-echo $0
-echo $1
-echo $2
-echo $3
-echo "> your push branch: \033[33m${BRANCH_NAME}\033[0m"
+	REMOTE_NAME=${remote_ref}
+	echo "> 远程分支: \033[33m${REMOTE_NAME}\033[0m"
+
+	if [ ${BRANCH_NAME} != ${REMOTE_NAME} ]
+	then
+		echo "
+		    本地分支和远程分支不一致，已终止！
+		"
+		exit 1
+	fi
+done
 
 loading
