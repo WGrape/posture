@@ -56,6 +56,10 @@ posture sethook
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189962394-397e9ab5-a523-405d-9d9e-3eaea0d0d706.png">
 
+如果提交了与本地不一致的分支，会出现如下报错。
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189963583-08a02a8d-b04e-401e-aed3-56c88e6ab619.png">
+
 ## 五、卸载更新
 
 ### 1、卸载应用
