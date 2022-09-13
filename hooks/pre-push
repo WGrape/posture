@@ -6,6 +6,12 @@ echo "欢迎使用posture"
 echo "温馨提示: 提交前请确认分支是否正确哦~"
 
 BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
-echo "> your commit branch: \033[33m${BRANCH_NAME}\033[0m"
+echo "> your local branch: \033[33m${BRANCH_NAME}\033[0m"
+
+echo $0
+echo $1
+echo $2
+echo $3
+echo "> your push branch: \033[33m${BRANCH_NAME}\033[0m"
 
 loading
