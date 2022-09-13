@@ -1,0 +1,15 @@
+#!/bin/sh
+currentDir=$(pwd)
+. $currentDir/include/function.sh
+
+printLogo
+
+echo "Warm tips: please make sure the branch is correct before committing"
+
+BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
+echo "> your commit branch: \033[33m${BRANCH_NAME}\033[0m"
+
+ORIGIN_COMMIT=$(cat $1)
+echo "> your commit msg: \033[33m${ORIGIN_COMMIT}\033[0m"
+
+loading
