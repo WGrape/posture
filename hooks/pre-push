@@ -5,4 +5,6 @@ currentDir=$(pwd)
 echo "欢迎使用posture"
 echo "温馨提示: 提交前请确认分支是否正确哦~"
 
+echo "> your commit branch: \033[33m${BRANCH_NAME}\033[0m"
+
 loading

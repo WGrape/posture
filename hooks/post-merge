@@ -1,1 +1,3 @@
 #!/bin/sh
+currentDir=$(pwd)
+. $currentDir/include/function.sh
