@@ -74,7 +74,7 @@ loading(){
   i=0
   while [ $i -le 100 ]
   do
-   printf "[%-50s] %d%% \r" "$b" "$i";
+   printf "\033[32m""[%-50s] %d%%""\033[0m""\r" "$b" "$i";
    sleep 0.2
    ((i=i+2))
    b+='#'
