@@ -29,7 +29,7 @@ posture adjust
 ```
 
 ### 2、全局钩子
-通过如下命令即可设置全局钩子，这样无论在哪个项目下，在使用```git commit/git push```命令时，钩子都会生效。
+通过如下命令即可设置全局钩子，这样无论在哪个项目下，在使用```git checkout/git commit/git push```等命令时，钩子都会生效。
 
 ```bash
 posture sethook
