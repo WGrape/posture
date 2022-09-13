@@ -9,7 +9,7 @@ adjust(){
   echo "> 完成 (done)"
 }
 
-hooking(){
+sethook(){
   if [ $1 == "" ]; then
     echo "缺少目录参数 (miss the directory param)"
     exit 1

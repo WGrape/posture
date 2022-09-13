@@ -10,8 +10,8 @@ currentDir=$(pwd)
 . $currentDir/include/function.sh
 COMMAND=$1
 
-if [ "${COMMAND}" == "hooking" ]; then
-  hooking $currentDir
+if [ "${COMMAND}" == "sethook" ]; then
+  sethook $currentDir
 elif [ "${COMMAND}" == "adjust" ]; then
   checkConfig && adjust
 elif [ "${COMMAND}" == "info" ]; then
@@ -21,7 +21,7 @@ elif [ "${COMMAND}" == "update" ]; then
   git pull
 elif [ "${COMMAND}" == "help" ]; then
   echo "下面是posture支持的命令列表 (Here is support commands)"
-  echo "  hooking: 设置全局钩子 (set the global git hooks)"
+  echo "  sethook: 设置全局钩子 (set the global git hooks)"
   echo "  adjust: 调整代码规范 (adjust the code specification)"
   echo "  update: 更新至最新版本 (update to latest version)"
   echo "  info: 展示posture配置的相关信息 (show the information of posture)"
