@@ -1,0 +1,7 @@
+#!/bin/sh
+
+BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
+
+ORIGIN_COMMIT=$(cat $1)
+
+echo "commit msg is ${BRANCH_NAME}:${ORIGIN_COMMIT}"
