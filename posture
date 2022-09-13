@@ -1,5 +1,4 @@
 #!/bin/sh
-
 if [ "${POSTUREPATH}" == "" ]; then
   echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
   exit 1
