@@ -16,9 +16,7 @@ do
 
 	if [ ${BRANCH_NAME} != ${REMOTE_NAME} ]
 	then
-		echo "
-		    The push branch not match local branch, has been stopped !
-		"
+		echo "The push branch not match local branch, has been stopped !"
 		exit 1
 	fi
 done
