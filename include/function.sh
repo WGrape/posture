@@ -34,9 +34,13 @@ checkConfig(){
 
 updateVersion(){
   currentDir=$(pwd)
-  cd $POSTUREPATH && git pull
-  cd $currentDir
-  echo "版本至最新更新成功 (update to latest version successfully)"
+  cd $POSTUREPATH && git pull && cd $currentDir
+  # 判断是否拉取成功
+  if [ $? -ne 0 ]; then
+    echo "版本更新至最新版本失败 (Failed to update the version to the latest version)"
+    exit 1
+  fi
+  echo "版本更新至最新版本成功 (update to latest version successfully)"
 }
 
 checkLang(){
