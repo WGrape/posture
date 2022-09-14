@@ -19,7 +19,7 @@ posture是一个强大且高效的项目开发管理工具，让你快速开始�
 
 > 关于更多背景细节请阅读文章[《以正确的姿势编写和管理代码》](https://github.com/WGrape/Blog/issues/260)
 
-# 三、下载安装
+# 二、快速安装
 
 你可以先通过以下命令完成下载安装操作，如果出现```install successfully```提示，则说明安装成功。
 
@@ -37,7 +37,7 @@ export POSTUREPATH={{the path of posture installation}}
 export PATH=$PATH:${POSTUREPATH}
 ```
 
-# 四、如何使用
+# 三、如何使用
 
 ## 1、调整代码格式
 在团队开发前，需要先统一调整代码规范。工具支持```go/php/java```三种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言，然后切至你的项目目录下，再使用如下命令即可。
@@ -72,7 +72,7 @@ posture sethook
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189963583-08a02a8d-b04e-401e-aed3-56c88e6ab619.png">
 
-## 五、卸载更新
+## 四、卸载更新
 
 ### 1、卸载应用
 如果需要卸载，在执行完以下命令后，手动删除```$POSTUREPATH```目录即可。
@@ -90,3 +90,7 @@ cd $POSTUREPATH && bash ./uninstall.sh
 ```bash
 posture update
 ```
+
+## 五、项目贡献
+
+<img src="https://contrib.rocks/image?repo=wgrape/cimanager" >
