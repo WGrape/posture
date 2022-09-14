@@ -3,7 +3,7 @@
 </p>
 
 <div align="center">
-<p>A powerful and efficient project development management tool</p>
+<p>A powerful and efficient tool for developing and managing your project</p>
 <p>一个强大且高效的项目开发管理工具</p>
 </div>
 
