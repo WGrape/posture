@@ -68,6 +68,10 @@ posture sethook
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189961812-86357a08-96d9-44d8-848c-557cb35cf2c9.png">
 
+如果在主分支（main/master）直接编辑提交代码，会出现如下报错。
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/190095654-565a82c1-455e-403d-8e56-adb8c7685b7c.png">
+
 ### (4) push钩子
 当使用```git push```时，会自动执行push钩子，如下图所示。
 
@@ -87,7 +91,6 @@ cd $POSTUREPATH && bash ./uninstall.sh
 ```
 
 ![image](https://user-images.githubusercontent.com/35942268/190053831-7310bffb-3fb2-4232-adbc-2e3871f08a4f.png)
-
 
 ### 2、版本更新
 为保证您的良好使用体验，建议使用最新版的posture工具，执行以下命令即可完成更新。
