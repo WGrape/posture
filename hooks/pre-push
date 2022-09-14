@@ -13,9 +13,10 @@ do
   BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 	echo "> 本地分支 (your local branch): \033[33m${BRANCH_NAME}\033[0m"
 
+	# 如果分支有refs/heads/前缀(如refs/heads/main), 则需要截取后部分
   REMOTE_REF=${remote_ref}
-  remote_ref_slices=(${REMOTE_REF//// })
-  REMOTE_NAME=${remote_ref_slices[2]}
+  remote_ref_slices=(${REMOTE_REF//refs\/heads\// })
+  REMOTE_NAME=${remote_ref_slices[0]}
 	echo "> 推送分支 (your push branch): \033[33m${REMOTE_NAME}\033[0m"
 
 	if [ ${BRANCH_NAME} != ${REMOTE_NAME} ]
