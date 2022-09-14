@@ -58,12 +58,21 @@ posture sethook
 
 <img width="680" alt="image" src="https://user-images.githubusercontent.com/35942268/189962874-9c6a3bba-d573-41a2-af3e-3594d4be2297.png">
 
-### (2) commit钩子
+### (2) pull钩子
+在使用```git pull```时，会自动执行pull钩子（由post-merge钩子实现），如下图所示。
+
+<img src="https://user-images.githubusercontent.com/35942268/190092067-4de64421-39c0-45fb-be53-b2cace7a5d66.png" width="500">
+
+### (3) commit钩子
 当使用```git commit```时，会自动执行commit钩子，如下图所示。
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189961812-86357a08-96d9-44d8-848c-557cb35cf2c9.png">
 
-### (3) push钩子
+如果在主分支（main/master）直接编辑提交代码，会出现如下报错。
+
+<img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/190095654-565a82c1-455e-403d-8e56-adb8c7685b7c.png">
+
+### (4) push钩子
 当使用```git push```时，会自动执行push钩子，如下图所示。
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189962394-397e9ab5-a523-405d-9d9e-3eaea0d0d706.png">
@@ -83,13 +92,14 @@ cd $POSTUREPATH && bash ./uninstall.sh
 
 ![image](https://user-images.githubusercontent.com/35942268/190053831-7310bffb-3fb2-4232-adbc-2e3871f08a4f.png)
 
-
 ### 2、版本更新
 为保证您的良好使用体验，建议使用最新版的posture工具，执行以下命令即可完成更新。
 
 ```bash
 posture update
 ```
+
+![image](https://user-images.githubusercontent.com/35942268/190094229-4617b499-458c-4ced-a1b8-20dd0ffc345d.png)
 
 ## 五、项目贡献
 
