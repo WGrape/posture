@@ -1,5 +1,18 @@
-# posture
-A powerful and efficient project development management tool / 一个强大且高效的项目开发管理工具
+<p align="center">
+<img width="321" alt="image" src="https://user-images.githubusercontent.com/35942268/190055195-bb9ab05a-1922-400e-b9cd-ff536351c323.png">
+</p>
+
+<div align="center">
+<p>A powerful and efficient project development management tool</p>
+<p>一个强大且高效的项目开发管理工具</p>
+</div>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Language-Shell-blue.svg">
+    <img src="https://img.shields.io/badge/Release-1.0.0-blue.svg">
+    <img src="https://img.shields.io/badge/Document-中文-orange.svg">
+    <img src="https://img.shields.io/badge/License-MIT-green.svg">   
+</p>
 
 # 一、项目介绍
 posture是一个强大且高效的项目开发管理工具，让你快速开始以正确的"姿势"编写和管理代码，解决团队开发时代码百花齐放、Git误操作等一系列疑难问题。
@@ -14,7 +27,9 @@ posture是一个强大且高效的项目开发管理工具，让你快速开始�
 git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh
 ```
 
-在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，这样您即可开始使用posture工具。
+![image](https://user-images.githubusercontent.com/35942268/190054375-4280aead-411a-404c-b068-c71da4241528.png)
+
+在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，确保您可以开始使用posture工具。
 
 ```bash
 # Here is the configurations of posture
@@ -65,6 +80,9 @@ posture sethook
 ```bash
 cd $POSTUREPATH && bash ./uninstall.sh
 ```
+
+![image](https://user-images.githubusercontent.com/35942268/190053831-7310bffb-3fb2-4232-adbc-2e3871f08a4f.png)
+
 
 ### 2、版本更新
 为保证您的良好使用体验，建议使用最新版的posture工具，执行以下命令即可完成更新。
