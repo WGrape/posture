@@ -47,7 +47,7 @@ posture adjust
 ```
 
 ## 2、设置全局钩子
-通过如下命令即可设置全局钩子，这样无论在哪个项目下，在使用```git checkout/git commit/git push```等命令时，钩子都会生效。
+通过如下命令即可设置全局钩子，这样无论在哪个项目下，在使用```git checkout/git commit/git push```等命令时，这些钩子都会自动工作，帮您解决git误操作等问题。
 
 ```bash
 posture sethook
@@ -58,12 +58,17 @@ posture sethook
 
 <img width="680" alt="image" src="https://user-images.githubusercontent.com/35942268/189962874-9c6a3bba-d573-41a2-af3e-3594d4be2297.png">
 
-### (2) commit钩子
+### (2) pull钩子
+在使用```git pull```时，会自动执行pull钩子（由post-merge钩子实现），如下图所示。
+
+<img src="https://user-images.githubusercontent.com/35942268/190092067-4de64421-39c0-45fb-be53-b2cace7a5d66.png" width="500">
+
+### (3) commit钩子
 当使用```git commit```时，会自动执行commit钩子，如下图所示。
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189961812-86357a08-96d9-44d8-848c-557cb35cf2c9.png">
 
-### (3) push钩子
+### (4) push钩子
 当使用```git push```时，会自动执行push钩子，如下图所示。
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189962394-397e9ab5-a523-405d-9d9e-3eaea0d0d706.png">
@@ -90,6 +95,9 @@ cd $POSTUREPATH && bash ./uninstall.sh
 ```bash
 posture update
 ```
+
+![image](https://user-images.githubusercontent.com/35942268/190094229-4617b499-458c-4ced-a1b8-20dd0ffc345d.png)
+
 
 ## 五、项目贡献
 
