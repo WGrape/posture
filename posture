@@ -14,7 +14,7 @@ elif [ "${COMMAND}" == "info" ]; then
   echo "The list of information"
   echo "> lang = ${lang}"
 elif [ "${COMMAND}" == "update" ]; then
-  git pull
+  updateVersion
 elif [ "${COMMAND}" == "help" ]; then
   echo "下面是posture支持的命令列表 (Here is support commands)"
   echo "  sethook: 设置全局钩子 (set the global git hooks)"

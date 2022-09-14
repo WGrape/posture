@@ -32,6 +32,13 @@ checkConfig(){
   fi
 }
 
+updateVersion(){
+  currentDir=$(pwd)
+  cd $POSTUREPATH && git pull
+  cd $currentDir
+  echo "版本至最新更新成功 (update to latest version successfully)"
+}
+
 checkLang(){
   if [ "${lang}" == "go" ]; then
     return 0
