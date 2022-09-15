@@ -1,6 +1,7 @@
 #!/bin/sh
 . $POSTUREPATH/config/config.sh
 
+# 开始调整
 adjust(){
   echo "正在调整中 ... (posture is adjusting ...)"
   echo "> 配置的语言为${lang} (your lang configuration is ${lang})"
@@ -8,6 +9,7 @@ adjust(){
   echo "> 完成 (done)"
 }
 
+# 设置全局Hook
 sethook(){
   if [ $1 == "" ]; then
     echo "缺少目录参数 (miss the directory param)"
@@ -24,6 +26,7 @@ sethook(){
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
 }
 
+# 检查配置
 checkConfig(){
   checkLang
   if [ $? -ne 0 ]; then
@@ -32,6 +35,7 @@ checkConfig(){
   fi
 }
 
+# 更新版本
 updateVersion(){
   currentDir=$(pwd)
   cd $POSTUREPATH && git pull && cd $currentDir
@@ -43,6 +47,15 @@ updateVersion(){
   echo "版本更新至最新版本成功 (update to latest version successfully)"
 }
 
+# 显示状态信息
+showInfo(){
+  echo "The list of configuration"
+  echo "> lang = ${lang}"
+  echo "The list of states"
+  echo "> version = ${version}"
+}
+
+# 检查配置中的编程语言
 checkLang(){
   if [ "${lang}" == "go" ]; then
     return 0
@@ -54,18 +67,8 @@ checkLang(){
   return 1
 }
 
+# 打印logo
 printLogo(){
-#  echo "\033[34m
-#===================================================================
-#.########...#######...######..########.##.....##.########..########
-#.##.....##.##.....##.##....##....##....##.....##.##.....##.##......
-#.##.....##.##.....##.##..........##....##.....##.##.....##.##......
-#.########..##.....##..######.....##....##.....##.########..######..
-#.##........##.....##.......##....##....##.....##.##...##...##......
-#.##........##.....##.##....##....##....##.....##.##....##..##......
-#.##.........#######...######.....##.....#######..##.....##.########
-#===================================================================\033[0m
-#"
   echo "\033[34m
 ==========================================================================
 '########:::'#######:::'######::'########:'##::::'##:'########::'########:
@@ -79,6 +82,33 @@ printLogo(){
 \033[0m"
 }
 
+# 发送钉钉消息
+sendDingMessage(){
+  message=$1
+  if [ "${message}" == "" ]; then
+    echo "钉钉消息不能为空 (The DingDing message must not be empty)"
+    return 0
+  fi
+  if [ "${dingToken}" == "" ]; then
+      echo "钉钉Token不能为空 (The DingDing token must not be empty)"
+      return 0
+    fi
+  curl -H 'Content-type: application/json' -d "{\"msgtype\":\"text\", \"text\": {\"content\":\"${message}\"}}" "https://oapi.dingtalk.com/robot/send?access_token=${dingToken}"
+}
+
+# 记录commit日志
+writeCommitLog(){
+  day=$(date "+%Y%m%d")
+  datetime=$(date "+%Y-%m-%d/%H:%M:%S")
+  projectName=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
+  commitUser=$1
+  commitBranch=$2
+  commitId=$3
+  commitMsg=$4
+  echo "${datetime} ${projectName} ${commitUser} ${commitBranch} ${commitId} ${commitMsg}" >> $POSTUREPATH/storage/commit.${day}.log
+}
+
+# 加载中
 loading(){
   b=''
   i=0

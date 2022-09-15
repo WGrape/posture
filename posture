@@ -11,8 +11,7 @@ if [ "${COMMAND}" == "sethook" ]; then
 elif [ "${COMMAND}" == "adjust" ]; then
   checkConfig && adjust
 elif [ "${COMMAND}" == "info" ]; then
-  echo "The list of information"
-  echo "> lang = ${lang}"
+  showInfo
 elif [ "${COMMAND}" == "update" ]; then
   updateVersion
 elif [ "${COMMAND}" == "help" ]; then

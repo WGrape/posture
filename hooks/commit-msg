@@ -15,7 +15,8 @@ if [ "${BRANCH_NAME}" == "main" ] || [ "${BRANCH_NAME}" == "master" ]; then
 fi
 echo "> 提交本地 (your commit branch): \033[33m${BRANCH_NAME}\033[0m"
 
-ORIGIN_COMMIT=$(cat $1)
+# 移除消息内容中的空格 sed s/[[:space:]]//g
+ORIGIN_COMMIT=$(cat $1 | sed s/[[:space:]]//g)
 echo "> 提交信息 (your commit msg): \033[33m${ORIGIN_COMMIT}\033[0m"
 
 loading
