@@ -3,8 +3,8 @@
 </p>
 
 <div align="center">
-<p>A powerful and efficient tool for developing and managing your project</p>
-<p>一个强大且高效的项目开发管理工具</p>
+<p>A lightweight and extensible tool for supervising and correcting of development posture</p>
+<p>一个轻量可扩展的开发姿势监督与矫正工具</p>
 </div>
 
 <p align="center">
@@ -15,7 +15,7 @@
 </p>
 
 # 一、项目介绍
-posture是一个强大且高效的项目开发管理工具，让你快速开始以正确的"姿势"编写和管理代码，解决团队开发时代码百花齐放、Git误操作等一系列疑难问题。
+posture是一个轻量可扩展的开发姿势监督与矫正工具，让你快速开始以正确的规范编写和管理代码，解决团队开发时代码百花齐放、Git误操作等一系列开发中的"姿势不正确"问题。
 
 > 关于更多背景细节请阅读文章[《以正确的姿势编写和管理代码》](https://github.com/WGrape/Blog/issues/260)
 
