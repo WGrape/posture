@@ -15,13 +15,13 @@
 </p>
 
 # 一、项目介绍
-posture是一个轻量可扩展的开发姿势监督与矫正工具，让你快速开始以正确的规范编写和管理代码，解决团队开发时代码百花齐放、Git误操作等一系列开发中的"姿势不正确"问题。
+posture是一个轻量可扩展的开发姿势监督与矫正工具，让您快速开始以正确的规范编写和管理代码，解决团队开发时代码百花齐放、Git误操作等一系列开发中的"姿势不正确"问题。
 
 > 关于更多背景细节请阅读文章[《以正确的姿势编写和管理代码》](https://github.com/WGrape/Blog/issues/260)
 
 # 二、快速安装
 
-你可以先通过以下命令完成下载安装操作，如果出现```install successfully```提示，则说明安装成功。
+您可以先通过以下命令完成下载安装操作，如果出现```install successfully```提示，则说明安装成功。
 
 ```bash
 git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh
@@ -29,7 +29,7 @@ git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.
 
 ![image](https://user-images.githubusercontent.com/35942268/190054375-4280aead-411a-404c-b068-c71da4241528.png)
 
-在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，确保您可以开始使用posture工具。
+在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，自动创建```$POSTUREPATH```变量并添加到```$PATH```变量中，以确保您可以开始使用posture工具。
 
 ```bash
 # Here is the configurations of posture
@@ -40,7 +40,7 @@ export PATH=$PATH:${POSTUREPATH}
 # 三、如何使用
 
 ## 1、调整代码格式
-在团队开发前，需要先统一调整代码规范。工具支持```go/php/java```三种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言，然后切至你的项目目录下，再使用如下命令即可。
+在团队开发前，需要先统一调整代码规范。工具支持```go/php/java```三种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言，然后切至您的项目目录下，再使用如下命令即可。
 
 ```bash
 posture adjust
