@@ -47,6 +47,14 @@ updateVersion(){
   echo "版本更新至最新版本成功 (update to latest version successfully)"
 }
 
+# 显示状态信息
+showInfo(){
+  echo "The list of configuration"
+  echo "> lang = ${lang}"
+  echo "The list of states"
+  echo "> version = ${version}"
+}
+
 # 检查配置中的编程语言
 checkLang(){
   if [ "${lang}" == "go" ]; then
@@ -86,6 +94,10 @@ sendDingMessage(){
       return 0
     fi
   curl -H 'Content-type: application/json' -d "{\"msgtype\":\"text\", \"text\": {\"content\":\"${message}\"}}" "https://oapi.dingtalk.com/robot/send?access_token=${dingToken}"
+}
+
+writeCommitLog(){
+
 }
 
 # 加载中

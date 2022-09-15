@@ -4,3 +4,9 @@ if [ "${POSTUREPATH}" == "" ]; then
   exit 1
 fi
 . $POSTUREPATH/include/function.sh
+
+
+commitId=$(git rev-parse HEAD)
+echo ${commitId}
+
+exit 1
