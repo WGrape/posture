@@ -96,8 +96,16 @@ sendDingMessage(){
   curl -H 'Content-type: application/json' -d "{\"msgtype\":\"text\", \"text\": {\"content\":\"${message}\"}}" "https://oapi.dingtalk.com/robot/send?access_token=${dingToken}"
 }
 
+# 记录commit日志
 writeCommitLog(){
-
+  day=$(date "+%Y%m%d")
+  datetime=$(date "+%Y-%m-%d/%H:%M:%S")
+  projectName=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
+  commitUser=$1
+  commitBranch=$2
+  commitId=$3
+  commitMsg=$4
+  echo "${datetime} ${projectName} ${commitUser} ${commitBranch} ${commitId} ${commitMsg}" >> $POSTUREPATH/storage/commit.${day}.log
 }
 
 # 加载中
