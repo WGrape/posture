@@ -67,12 +67,16 @@ export PATH=$PATH:${POSTUREPATH}
 posture adjust
 ```
 
+这时在您的项目根目录下，就会生成一个```.editorconfig```文件，它会为您的IDE设置统一的代码规范。
+
 ## <span id="32">2、设置全局钩子</span>
-通过如下命令即可设置全局钩子，这样无论在哪个项目下，在使用```git checkout/git commit/git push```等命令时，这些钩子都会自动工作，帮您解决git误操作等问题。
+我们开发中的项目可能不只一个，如果每个项目都单独设置```git hook```会很麻烦，且不易维护。所以```posture```提供了设置全局钩子的功能，使用如下命令即可。
 
 ```bash
 posture sethook
 ```
+
+这样无论在哪个项目下，在使用```git checkout/git pull/git commit/git push```等命令时，相应的钩子都会自动工作，帮您解决git误操作等问题。
 
 ### <span id="321">(1) checkout钩子</span>
 当使用```git checkout```时，会自动执行checkout钩子，如下图所示。
