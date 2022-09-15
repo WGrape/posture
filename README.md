@@ -72,6 +72,19 @@ posture sethook
 
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/190095654-565a82c1-455e-403d-8e56-adb8c7685b7c.png">
 
+提交成功后会触发```post-commit```钩子，自动在```$POSTUREPATH/storage/```目录下生成一条以天为单位的```commit.${day}.log```commit日志文件
+
+```text
+# 日志内容如下
+2021-08-17/10:51:44 posture wgrape test 3exxxxx feat:新增钉钉WebHook
+2021-08-17/10:56:44 posture wgrape test 3exxxxx feat:新增commit日志记录功能
+
+# 每行由6部分组成
+-------------------------------------------------------------
+| date | project | user | branch | commitId | commitMessage |
+-------------------------------------------------------------
+```
+
 ### (4) push钩子
 当使用```git push```时，会自动执行push钩子，如下图所示。
 
