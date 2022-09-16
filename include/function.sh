@@ -5,6 +5,7 @@
 adjust(){
   echo "正在调整中 ... (posture is adjusting ...)"
   echo "> 配置的语言为${lang} (your lang configuration is ${lang})"
+  git config --global --add core.fileMode false
   cp $POSTUREPATH/editor/${lang}/.editorconfig ./
   echo "> 完成 (done)"
 }
