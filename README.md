@@ -94,7 +94,7 @@ posture sethook
 ```
 
 ### <span id="321">(1) checkout钩子</span>
-当使用```git checkout```命令时，会自动执行checkout钩子，如下图所示。
+当使用```git checkout/git switch```命令时，会自动执行checkout钩子，如下图所示。
 
 <details>
   <summary>查看使用示例</summary>
