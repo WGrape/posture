@@ -34,3 +34,12 @@
 ### Bug Fixes
 
 * 修复自动发布release配置 ([800f3d2](https://github.com/WGrape/posture/commit/800f3d2287f38551259991896bf2ccc4c8d6fafd))
+
+## 1.0.0
+
+[posture](https://github.com/WGrape/CIManager)V1.0.0版本发布，一个强大且高效的项目开发管理工具
+
+### 特性
+1、支持设置统一代码规范
+2、支持设置全局Hook
+3、快速安装使用
