@@ -48,7 +48,12 @@ posture是一个轻量可扩展的开发姿势监督与矫正工具，让您快�
 git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh
 ```
 
+<details>
+  <summary>查看使用示例</summary>
+
 ![image](https://user-images.githubusercontent.com/35942268/190054375-4280aead-411a-404c-b068-c71da4241528.png)
+
+</details>
 
 在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，自动创建```$POSTUREPATH```变量并添加到```$PATH```变量中，以确保您可以开始使用posture工具。
 
@@ -81,21 +86,33 @@ posture sethook
 ### <span id="321">(1) checkout钩子</span>
 当使用```git checkout```时，会自动执行checkout钩子，如下图所示。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="680" alt="image" src="https://user-images.githubusercontent.com/35942268/189962874-9c6a3bba-d573-41a2-af3e-3594d4be2297.png">
+</details>
 
 ### <span id="322">(2) pull钩子</span>
 在使用```git pull```时，会自动执行pull钩子（由post-merge钩子实现），如下图所示。
 
+<details>
+  <summary>查看使用示例</summary>
 <img src="https://user-images.githubusercontent.com/35942268/190092067-4de64421-39c0-45fb-be53-b2cace7a5d66.png" width="500">
+</details>
 
 ### <span id="323">(3) commit钩子</span>
 当使用```git commit```时，会自动执行commit钩子，如下图所示。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189961812-86357a08-96d9-44d8-848c-557cb35cf2c9.png">
+</details>
 
 如果在主分支（main/master）直接编辑提交代码，会出现如下报错。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/190095654-565a82c1-455e-403d-8e56-adb8c7685b7c.png">
+</details>
 
 提交成功后会触发```post-commit```钩子，自动在```$POSTUREPATH/storage/```目录下生成一条以天为单位的```commit.${day}.log```commit日志文件，以实现每日工作统计等功能。
 
@@ -113,11 +130,17 @@ posture sethook
 ### <span id="324">(4) push钩子</span>
 当使用```git push```时，会自动执行push钩子，如下图所示。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189962394-397e9ab5-a523-405d-9d9e-3eaea0d0d706.png">
+</details>
 
 如果提交了与本地不一致的分支，会出现如下报错。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189963583-08a02a8d-b04e-401e-aed3-56c88e6ab619.png">
+</details>
 
 # <span id="4">四、卸载更新</span>
 
