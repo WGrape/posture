@@ -36,11 +36,11 @@ PR的提交不限制范围，如代码、文档等修改均在允许范围内，
 - chore: 构建过程或辅助工具的变动，如dockerfile的修改
 
 ### <span id="43">(3) 分支管理</span>
-代码统一先提交合至```test```分支，在review通过后，会根据实际情况选择合入```main```分支或者```release```分支。如果是非重要修改，则只会合入```main```分支。
+代码统一先提交合至```test```分支，在review通过后合入```main```分支。
 
 - ```main``` ：主分支
 - ```test``` ：测试分支
-- ```release``` ：版本发布专用分支，合入```release```分支后会自动打包发布release
+- ```release-please--branches--main--components--posture``` ：版本自动发布专用分支，合入```main```分支后会自动打包发布release
 
 ### <span id="43">(4) 提交内容注释</span>
 对于重要代码部分，请以评论的方式写清楚原因，可以参考 [fix: 修复push钩子中对特定分支名截取的bug](https://github.com/WGrape/posture/pull/23#pullrequestreview-1110452197)

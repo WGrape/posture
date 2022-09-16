@@ -98,7 +98,7 @@ posture sethook
 
 <details>
   <summary>查看使用示例</summary>
-<img width="680" alt="image" src="https://user-images.githubusercontent.com/35942268/189962874-9c6a3bba-d573-41a2-af3e-3594d4be2297.png">
+<img width="680" alt="image" src="https://user-images.githubusercontent.com/35942268/190693301-44347c94-2c4f-4d8a-bfcc-2b917ae2d41f.png">
 </details>
 
 ### <span id="322">(2) pull钩子</span>
