@@ -77,7 +77,7 @@ posture adjust
 
 ```bash
 # 忽略文件权限
-git config --global core.fileMode false 
+git config --global --add core.fileMode false 
 ```
 
 ### <span id="312">(2) 代码规范
