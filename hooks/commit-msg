@@ -10,7 +10,7 @@ echo "温馨提示: 请务必在提交代码前确认分支是否正确 (Warm ti
 
 BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
 if [ "${BRANCH_NAME}" == "main" ] || [ "${BRANCH_NAME}" == "master" ]; then
-  echo "禁止直接再主分支提交代码, 已终止! (You are not allowed to commit at main branch, has been stopped !)"
+  echo "禁止直接再主分支提交代码, 已中断! (You are not allowed to commit at main branch, has been stopped !)"
   exit 1
 fi
 echo "> 提交本地 (your commit branch): \033[33m${BRANCH_NAME}\033[0m"
