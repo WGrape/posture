@@ -49,4 +49,4 @@ PR的提交不限制范围，如代码、文档等修改均在允许范围内，
 本项目设置了自动release发布，不需要手动打包处理。
 
 ## <span id="6">6、项目数据</span>
-<a href="https://starchart.cc/WGrape/esupdater"><img src="https://starchart.cc/WGrape/esupdater.svg" width="700"></a>
+<a href="https://starchart.cc/WGrape/posture"><img src="https://starchart.cc/WGrape/posture.svg" width="700"></a>
