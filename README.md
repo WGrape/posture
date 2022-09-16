@@ -141,5 +141,6 @@ posture update
 
 
 # <span id="5">五、项目贡献</span>
+如果您觉得项目有用，欢迎star ！您还可以参考[如何贡献](./.github/CONTRIBUTING.md)文档来共同参与此项目，欢迎加入 ！
 
 <img src="https://contrib.rocks/image?repo=wgrape/cimanager" >
