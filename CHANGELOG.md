@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/WGrape/posture/compare/v1.2.1...v1.3.0) (2022-09-16)
+
+
+### Features
+
+* checkout钩子新增分支切换信息 ([75bc213](https://github.com/WGrape/posture/commit/75bc2132ff318bac13f02d74a2ec992d465de783))
+
 ## [1.2.1](https://github.com/WGrape/posture/compare/v1.2.0...v1.2.1) (2022-09-16)
 
 
