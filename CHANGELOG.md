@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/WGrape/posture/compare/v1.2.0...v1.2.1) (2022-09-16)
+
+
+### Docs
+
+* 修改CHANGELOG ([cb41d5d](https://github.com/WGrape/posture/commit/cb41d5d76e42d181edb8bdb65523610da2615e0c))
+
 ## [1.2.0](https://github.com/WGrape/posture/compare/v1.1.2...v1.2.0) (2022-09-16)
 
 
