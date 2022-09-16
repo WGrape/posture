@@ -7,6 +7,8 @@
 
 * adjust新增git配置相关 ([8d54986](https://github.com/WGrape/posture/commit/8d54986cdc084c6559cf35268fd06a2ae0d479a2))
 
+## [1.1.3](https://github.com/WGrape/posture/compare/v1.1.2...v1.1.3) (2022-09-16)
+
 
 ### Docs
 
