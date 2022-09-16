@@ -59,9 +59,13 @@ showInfo(){
 checkLang(){
   if [ "${lang}" == "go" ]; then
     return 0
+  elif [ "${lang}" == "java" ]; then
+    return 0
+  elif [ "${lang}" == "js" ]; then
+    return 0
   elif [ "${lang}" == "php" ]; then
     return 0
-  elif [ "${lang}" == "java" ]; then
+  elif [ "${lang}" == "shell" ]; then
     return 0
   fi
   return 1

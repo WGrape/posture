@@ -8,12 +8,12 @@
 </div>
 
 <p align="center">
-    <img src="https://img.shields.io/badge/Language-Shell-blue.svg">
-    <img src="https://img.shields.io/badge/Release-1.1.0-blue.svg">
+    <img src="https://img.shields.io/badge/language-Shell-blue.svg">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/wgrape/posture">
     <img src="https://img.shields.io/github/repo-size/wgrape/posture">
     <img src="https://img.shields.io/github/downloads/wgrape/posture/total">
-    <img src="https://img.shields.io/badge/Document-中文-orange.svg">
-    <img src="https://img.shields.io/badge/License-MIT-green.svg">   
+    <img src="https://img.shields.io/badge/document-中文-orange.svg">
+    <img src="https://img.shields.io/badge/license-MIT-green.svg">   
 </p>
 
 <details>
@@ -61,7 +61,7 @@ export PATH=$PATH:${POSTUREPATH}
 # <span id="3">三、如何使用</span>
 
 ## <span id="31">1、调整代码格式</span>
-在团队开发前，需要先统一调整代码规范。工具支持```go/php/java```三种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言，然后切至您的项目目录下，再使用如下命令即可。
+在团队开发前，需要先统一调整代码规范。工具支持```go/java/js/php/shell```五种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言，然后切至您的项目目录下，再使用如下命令即可。
 
 ```bash
 posture adjust
