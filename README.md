@@ -22,7 +22,9 @@
 - [一、项目介绍](#1)
 - [二、快速安装](#2)
 - [三、如何使用](#3)
-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [1、调整代码格式](#31)
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [1、矫正开发姿势](#31)
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [(1) git配置](#311)
+- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [(2) 代码规范](#312)
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [2、设置全局钩子](#32)
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [(1) checkout钩子](#321)
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [(2) pull钩子](#322)
@@ -48,7 +50,10 @@ posture是一个轻量可扩展的开发姿势监督与矫正工具，让您快�
 git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh
 ```
 
-![image](https://user-images.githubusercontent.com/35942268/190054375-4280aead-411a-404c-b068-c71da4241528.png)
+<details>
+  <summary>查看使用示例</summary>
+  <img src="https://user-images.githubusercontent.com/35942268/190054375-4280aead-411a-404c-b068-c71da4241528.png">
+</details>
 
 在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，自动创建```$POSTUREPATH```变量并添加到```$PATH```变量中，以确保您可以开始使用posture工具。
 
@@ -60,42 +65,64 @@ export PATH=$PATH:${POSTUREPATH}
 
 # <span id="3">三、如何使用</span>
 
-## <span id="31">1、调整代码格式</span>
-在团队开发前，需要先统一调整代码规范。工具支持```go/java/js/php/shell```五种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言，然后切至您的项目目录下，再使用如下命令即可。
+## <span id="31">1、矫正开发姿势</span>
+在团队开发中的任何阶段，都可以使用如下命令快速矫正git配置、代码规范等开发姿势，统一团队成员的开发环境。
 
 ```bash
 posture adjust
 ```
 
-这时在您的项目根目录下，就会生成一个```.editorconfig```文件，它会为您的IDE设置统一的代码规范。
+### <span id="311">(1) git配置
+在执行完```adjust```命令时，```posture```会自动执行以下操作，确保git配置保持一致。
+
+```bash
+# 忽略文件权限
+git config --global core.fileMode false 
+```
+
+### <span id="312">(2) 代码规范
+
+工具目前支持```go/java/js/php/shell```五种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言即可，默认为```go```语言。
+
+在执行完```adjust```命令后，在您的项目根目录下，会生成一个```.editorconfig```文件，它会为您的IDE设置统一的代码规范。
 
 ## <span id="32">2、设置全局钩子</span>
-我们开发中的项目可能不只一个，如果每个项目都单独设置```git hook```会很麻烦，且不易维护。所以```posture```提供了设置全局钩子的功能，使用如下命令即可。
+在开发前，请使用如下命令设置全局钩子。这样无论在哪个项目下，当使用git命令时，相应的钩子都会自动工作，实时监督我们在git流程中的操作，一旦出现姿势错误的情况，就会即时发出提醒并中断操作。
 
 ```bash
 posture sethook
 ```
 
-这样无论在哪个项目下，在使用```git checkout/git pull/git commit/git push```等命令时，相应的钩子都会自动工作，帮您解决git误操作等问题。
-
 ### <span id="321">(1) checkout钩子</span>
-当使用```git checkout```时，会自动执行checkout钩子，如下图所示。
+当使用```git checkout```命令时，会自动执行checkout钩子，如下图所示。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="680" alt="image" src="https://user-images.githubusercontent.com/35942268/189962874-9c6a3bba-d573-41a2-af3e-3594d4be2297.png">
+</details>
 
 ### <span id="322">(2) pull钩子</span>
-在使用```git pull```时，会自动执行pull钩子（由post-merge钩子实现），如下图所示。
+在使用```git pull```命令时，会自动执行pull钩子（由post-merge钩子实现），如下图所示。
 
+<details>
+  <summary>查看使用示例</summary>
 <img src="https://user-images.githubusercontent.com/35942268/190092067-4de64421-39c0-45fb-be53-b2cace7a5d66.png" width="500">
+</details>
 
 ### <span id="323">(3) commit钩子</span>
-当使用```git commit```时，会自动执行commit钩子，如下图所示。
+当使用```git commit```命令时，会自动执行commit钩子，如下图所示。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189961812-86357a08-96d9-44d8-848c-557cb35cf2c9.png">
+</details>
 
-如果在主分支（main/master）直接编辑提交代码，会出现如下报错。
+如果在主分支（main/master）直接编辑提交代码，会出现如下提醒并中断操作。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/190095654-565a82c1-455e-403d-8e56-adb8c7685b7c.png">
+</details>
 
 提交成功后会触发```post-commit```钩子，自动在```$POSTUREPATH/storage/```目录下生成一条以天为单位的```commit.${day}.log```commit日志文件，以实现每日工作统计等功能。
 
@@ -111,13 +138,19 @@ posture sethook
 ```
 
 ### <span id="324">(4) push钩子</span>
-当使用```git push```时，会自动执行push钩子，如下图所示。
+当使用```git push```命令时，会自动执行push钩子，如下图所示。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189962394-397e9ab5-a523-405d-9d9e-3eaea0d0d706.png">
+</details>
 
-如果提交了与本地不一致的分支，会出现如下报错。
+如果提交了与本地不一致的分支，会出现如下提醒并中断操作。
 
+<details>
+  <summary>查看使用示例</summary>
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/189963583-08a02a8d-b04e-401e-aed3-56c88e6ab619.png">
+</details>
 
 # <span id="4">四、卸载更新</span>
 
@@ -128,7 +161,10 @@ posture sethook
 cd $POSTUREPATH && bash ./uninstall.sh
 ```
 
-![image](https://user-images.githubusercontent.com/35942268/190053831-7310bffb-3fb2-4232-adbc-2e3871f08a4f.png)
+<details>
+  <summary>查看使用示例</summary>
+  <img src="https://user-images.githubusercontent.com/35942268/190053831-7310bffb-3fb2-4232-adbc-2e3871f08a4f.png">
+</details>
 
 ## <span id="42">2、版本更新</span>
 为保证您的良好使用体验，建议使用最新版的posture工具，执行以下命令即可完成更新。
@@ -137,8 +173,10 @@ cd $POSTUREPATH && bash ./uninstall.sh
 posture update
 ```
 
-![image](https://user-images.githubusercontent.com/35942268/190094229-4617b499-458c-4ced-a1b8-20dd0ffc345d.png)
-
+<details>
+  <summary>查看使用示例</summary>
+  <img src="https://user-images.githubusercontent.com/35942268/190094229-4617b499-458c-4ced-a1b8-20dd0ffc345d.png">
+</details>
 
 # <span id="5">五、项目贡献</span>
 如果您觉得项目有用，欢迎star ！您还可以参考[如何贡献](./.github/CONTRIBUTING.md)文档来共同参与此项目，欢迎加入 ！
