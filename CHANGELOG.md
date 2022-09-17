@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.1](https://github.com/WGrape/posture/compare/v1.3.0...v1.3.1) (2022-09-17)
+
+
+### Bug Fixes
+
+* 修复sethook命令传参错误bug ([e878889](https://github.com/WGrape/posture/commit/e8788892ce5ca793816ca86171191e049b284974))
+
 ## [1.3.0](https://github.com/WGrape/posture/compare/v1.2.1...v1.3.0) (2022-09-16)
 
 
