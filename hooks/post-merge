@@ -7,3 +7,5 @@ fi
 
 printLogo
 echo "温馨提示: 请注意是否拉取了正确的分支 (Warm tips: Please pull the correct branch)"
+echo "> 合并成功 (merge successfully)"
+echo "> 请检查是否合并了正确分支 (please check the pulled branch is correct): \033[33m" $(git reflog -1) "\033[0m"

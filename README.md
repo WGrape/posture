@@ -106,7 +106,7 @@ posture sethook
 
 <details>
   <summary>查看使用示例</summary>
-<img src="https://user-images.githubusercontent.com/35942268/190092067-4de64421-39c0-45fb-be53-b2cace7a5d66.png" width="500">
+  <img width="800" src="https://user-images.githubusercontent.com/35942268/190868050-13348f58-5abe-4da1-b714-f1a3784a6f0c.png">
 </details>
 
 ### <span id="323">(3) commit钩子</span>
