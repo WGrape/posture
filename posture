@@ -7,7 +7,7 @@ fi
 
 COMMAND=$1
 if [ "${COMMAND}" == "sethook" ]; then
-  sethook $currentDir
+  sethook $POSTUREPATH
 elif [ "${COMMAND}" == "adjust" ]; then
   checkConfig && adjust
 elif [ "${COMMAND}" == "info" ]; then
