@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.4.0](https://github.com/WGrape/posture/compare/v1.3.1...v1.4.0) (2022-09-17)
+
+
+### Features
+
+* post-merge新增pull后的分支检测提示 ([fed524f](https://github.com/WGrape/posture/commit/fed524f817711b2d3e91ea6a6ac1d16f6f7b2513))
+
+
+### Docs
+
+* 修改文档的分支管理描述 ([c5ce0b6](https://github.com/WGrape/posture/commit/c5ce0b67f40a8aec58b651c60bfcfd81d04e1322))
+
 ## [1.3.1](https://github.com/WGrape/posture/compare/v1.3.0...v1.3.1) (2022-09-17)
 
 
