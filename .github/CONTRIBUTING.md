@@ -36,7 +36,7 @@ PR的提交不限制范围，如代码、文档等修改均在允许范围内，
 - chore: 构建过程或辅助工具的变动，如dockerfile的修改
 
 ### <span id="43">(3) 分支管理</span>
-代码统一先提交合至```test```分支，在review通过后合入```main```分支。
+代码统一先提交合至```test```分支，在review通过后合入```main```分支。在合入```main```分支后，会自动生成一个来自```release-please--branches--main--components--posture```分支的PR，合并这个自动PR即可。
 
 - ```main``` ：主分支
 - ```test``` ：测试分支
