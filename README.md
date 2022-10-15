@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/language-Shell-blue.svg">
     <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/wgrape/posture">
     <img src="https://img.shields.io/github/repo-size/wgrape/posture">
-    <img src="https://img.shields.io/github/downloads/wgrape/posture/total">
+    <!--<img src="https://img.shields.io/github/downloads/wgrape/posture/total">-->
     <img src="https://img.shields.io/badge/document-中文-orange.svg">
     <img src="https://img.shields.io/badge/license-MIT-green.svg">   
 </p>
