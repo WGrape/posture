@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.5.0](https://github.com/WGrape/posture/compare/v1.4.0...v1.5.0) (2022-10-15)
+
+
+### Features
+
+* 新增loadingSpeed和protectMainSwitch等配置功能 ([b71a9c1](https://github.com/WGrape/posture/commit/b71a9c1e1fce395917c1f5925b09da55c2591804))
+
+
+### Docs
+
+* 完善文档 ([2fa811c](https://github.com/WGrape/posture/commit/2fa811c1d4153c9396f45da9adaec95618135fe3))
+
 ## [1.4.0](https://github.com/WGrape/posture/compare/v1.3.1...v1.4.0) (2022-09-17)
 
 
