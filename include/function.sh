@@ -115,12 +115,25 @@ writeCommitLog(){
 
 # 加载中
 loading(){
+  sleepSeconds=0.2
+  if [ "${loadingSpeed}" == 1 ]; then
+    sleepSeconds=0.2
+  elif [ "${loadingSpeed}" == 2 ]; then
+    sleepSeconds=0.1
+  elif [ "${loadingSpeed}" == 3 ]; then
+    sleepSeconds=0.05
+  elif [ "${loadingSpeed}" == 4 ]; then
+    sleepSeconds=0.025
+  elif [ "${loadingSpeed}" == 5 ]; then
+    sleepSeconds=0.01
+  fi
+
   b=''
   i=0
   while [ $i -le 100 ]
   do
    printf "\033[32m""[%-50s] %d%%""\033[0m""\r" "$b" "$i";
-   sleep 0.2
+   sleep $sleepSeconds
    ((i=i+2))
    b+='#'
   done
