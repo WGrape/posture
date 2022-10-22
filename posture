@@ -8,6 +8,8 @@ fi
 COMMAND=$1
 if [ "${COMMAND}" == "sethook" ]; then
   sethook $POSTUREPATH
+elif [ "${COMMAND}" == "unsethook" ]; then
+  unsethook
 elif [ "${COMMAND}" == "adjust" ]; then
   checkConfig && adjust
 elif [ "${COMMAND}" == "info" ]; then
