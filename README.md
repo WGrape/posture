@@ -93,6 +93,12 @@ git config --global --add core.fileMode false
 posture sethook
 ```
 
+当需要取消全局钩子时, 执行unsethook命令即可
+
+```bash
+posture unsethook
+```
+
 ### <span id="321">(1) checkout钩子</span>
 当使用```git checkout/git switch```命令时，会自动执行checkout钩子，如下图所示。
 

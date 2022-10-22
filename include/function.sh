@@ -27,6 +27,11 @@ sethook(){
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
 }
 
+# 取消设置全局Hook
+unsethook(){
+  git config --global core.hooksPath false
+}
+
 # 检查配置
 checkConfig(){
   checkLang
