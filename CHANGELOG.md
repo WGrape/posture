@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.6.0](https://github.com/WGrape/posture/compare/v1.5.0...v1.6.0) (2022-10-22)
+
+
+### Features
+
+* 新增unhook取消全局钩子功能 ([75e6dfb](https://github.com/WGrape/posture/commit/75e6dfbe57b2842e0470bfbb21efbf30c5477222))
+* 新增unhook取消全局钩子功能 ([ba0ef25](https://github.com/WGrape/posture/commit/ba0ef25b4757f0e81b2fec5df3d1b9248526d4f8))
+
 ## [1.5.0](https://github.com/WGrape/posture/compare/v1.4.0...v1.5.0) (2022-10-15)
 
 
