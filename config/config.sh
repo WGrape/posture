@@ -10,4 +10,4 @@ dingToken="example"
 loadingSpeed=4
 
 # the protect rules
-protectMainSwitch="on"
+protectMainSwitch="off"
