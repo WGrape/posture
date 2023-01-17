@@ -8,6 +8,7 @@
 </div>
 
 <p align="center">
+    <a href="https://www.oscs1024.com/project/oscs/WGrape/posture?ref=badge_small" alt="OSCS Status"><img src="https://www.oscs1024.com/platform/badge/WGrape/posture.svg?size=small"/></a>
     <img src="https://img.shields.io/badge/language-Shell-blue.svg">
     <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/wgrape/posture">
     <img src="https://img.shields.io/github/repo-size/wgrape/posture">
