@@ -1,30 +1,32 @@
 #!/bin/sh
 if [ "${POSTUREPATH}" == "" ]; then
-  echo "You missed the configuration of POSTUREPATH"
+  echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
   exit 1
 fi
 . $POSTUREPATH/include/function.sh
 
 COMMAND=$1
-if [ "${COMMAND}" == "sethook" ]; then
-  sethook $POSTUREPATH
-elif [ "${COMMAND}" == "unsethook" ]; then
-  unsethook
+if [ "${COMMAND}" == "hook" ]; then
+  hook $POSTUREPATH
+elif [ "${COMMAND}" == "unhook" ]; then
+  unhook
 elif [ "${COMMAND}" == "adjust" ]; then
   check_config && adjust
 elif [ "${COMMAND}" == "info" ]; then
-  show_info
+  status
 elif [ "${COMMAND}" == "update" ]; then
   update_version
 elif [ "${COMMAND}" == "help" ] || [ "${COMMAND}" == "" ]; then
   print_logo
 
-  echo "Here is support commands"
-  echo "  sethook: set the global git hooks"
-  echo "  adjust: adjust the code specification"
-  echo "  update: update to latest version"
-  echo "  info: show the information of posture"
-  echo "  help: view help"
+  echo "下面是posture支持的命令列表 (Here is support commands)"
+  echo "=========================================================================="
+  echo "  - hook:   设置全局钩子 (set the global git hooks)"
+  echo "  - adjust: 调整代码规范 (adjust the code specification)"
+  echo "  - update: 更新至最新版本 (update to latest version)"
+  echo "  - info:   展示posture配置的相关信息 (show the information of posture)"
+  echo "  - help:   查看帮助 (view help)"
+  echo ""
 else
-  echo "Unknown command: ${COMMAND}"
+  echo "不支持的命令: ${COMMAND} (Unknown command: ${COMMAND})"
 fi

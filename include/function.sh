@@ -6,29 +6,31 @@ adjust(){
   echo "正在调整中 ... (posture is adjusting ...)"
   echo "> 配置的语言为${lang} (your lang configuration is ${lang})"
   git config --global --add core.fileMode false
-  cp $POSTUREPATH/editor/${lang}/.editorconfig ./
+  cp $POSTUREPATH/include/editor/${lang}/.editorconfig ./
   echo "> 完成 (done)"
 }
 
 # 设置全局Hook
-sethook(){
+hook(){
   if [ $1 == "" ]; then
     echo "缺少目录参数 (miss the directory param)"
     exit 1
   fi
 
   projectDir=$1
-  git config --global core.hooksPath ${projectDir}/hooks
-  chmod a+x ${projectDir}/hooks/commit-msg
-  chmod a+x ${projectDir}/hooks/post-checkout
-  chmod a+x ${projectDir}/hooks/post-merge
-  chmod a+x ${projectDir}/hooks/pre-commit
-  chmod a+x ${projectDir}/hooks/pre-push
+  git config --global core.hooksPath ${projectDir}/include/hooks
+  chmod a+x ${projectDir}/include/hooks/commit-msg
+  chmod a+x ${projectDir}/include/hooks/post-checkout
+  chmod a+x ${projectDir}/include/hooks/post-merge
+  chmod a+x ${projectDir}/include/hooks/pre-commit
+  chmod a+x ${projectDir}/include/hooks/pre-push
+
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
+  echo "If your other projects don't need require the global Hooks, they can be reconfigured in the root directory of your other projects: git config core.hooksPath .git/hooks"
 }
 
 # 取消设置全局Hook
-unsethook(){
+unhook(){
   git config --global core.hooksPath false
 }
 
@@ -54,7 +56,7 @@ update_version(){
 }
 
 # 显示状态信息
-show_info(){
+status(){
   echo "The list of configuration"
   echo "> lang = ${lang}"
   echo "The list of states"

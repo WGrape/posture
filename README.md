@@ -94,13 +94,13 @@ git config --global --add core.fileMode false
 在开发前，请使用如下命令设置全局钩子。这样无论在哪个项目下，当使用git命令时，相应的钩子都会自动工作，实时监督我们在git流程中的操作，一旦出现姿势错误的情况，就会即时发出提醒并中断操作。
 
 ```bash
-posture sethook
+posture hook
 ```
 
-当需要取消全局钩子时, 执行```unsethook```命令即可
+当需要取消全局钩子时, 执行```unhook```命令即可
 
 ```bash
-posture unsethook
+posture unhook
 ```
 
 ### <span id="321">(1) checkout钩子</span>
