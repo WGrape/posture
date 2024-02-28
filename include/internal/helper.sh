@@ -1,5 +1,4 @@
 #!/bin/sh
-. $POSTUREPATH/config/config.sh
 
 # print logo
 print_logo(){
@@ -83,30 +82,29 @@ write_commit_log(){
     commitBranch=$2
     commitId=$3
     commitMsg=$4
-    echo "${datetime} ${projectName} ${commitUser} ${commitBranch} ${commitId} ${commitMsg}" >> $POSTUREPATH/storage/commit.${day}.log
+    echo "${datetime} ${projectName} ${commitUser} ${commitBranch} ${commitId} ${commitMsg}" >> $POSTURE_PATH/storage/commit.${day}.log
 }
 
-# check the language.
-check_lang(){
-    if [ "${lang}" == "go" ]; then
-        return 0
-    elif [ "${lang}" == "java" ]; then
-        return 0
-    elif [ "${lang}" == "js" ]; then
-        return 0
-    elif [ "${lang}" == "php" ]; then
-        return 0
-    elif [ "${lang}" == "shell" ]; then
-        return 0
-    fi
-    return 1
-}
-
-# check the config
-check_config(){
-    check_lang
-    if [ $? -ne 0 ]; then
-        print_error "lang配置错误: ${lang} (configuration of lang is error: ${lang})"
+# parse env file
+parse_env_file() {
+    if [ "$1" == "" ]; then
+        print_error "miss file to parse"
         exit 1
     fi
+
+    # export environment variables.
+    while IFS= read -r line || [[ -n "$line" ]]; do
+        line=$(echo "$line" | sed 's/#.*//' | awk '{$1=$1};1')
+        if [ "$line" = "" ]; then
+            continue
+        fi
+
+        key=$(echo "$line" | cut -d '=' -f1)
+        value=$(echo "$line" | cut -d '=' -f2-)
+        # print_info "env variable: ${key}=${value}"
+        if ! eval "$key"="$value"; then
+            print_error "parse env error: $line | $key | $value"
+            exit 1
+        fi
+    done < $1
 }

@@ -59,12 +59,12 @@ git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.
   <img width="500" alt="image" src="https://github.com/WGrape/posture/assets/35942268/101cbd76-24f1-45f3-b92d-0f209458d902">
 </details>
 
-在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，自动创建```$POSTUREPATH```变量并添加到```$PATH```变量中，以确保您可以开始使用posture工具。
+在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，自动创建```$POSTURE_PATH```变量并添加到```$PATH```变量中，以确保您可以开始使用posture工具。
 
 ```bash
-# Here is the configurations of posture
-export POSTUREPATH={{the path of posture installation}}
-export PATH=$PATH:${POSTUREPATH}
+# Here is the config of posture
+export POSTURE_PATH={{the path of posture installation}}
+export PATH=$PATH:${POSTURE_PATH}
 ```
 
 # <span id="3">三、如何使用</span>
@@ -83,8 +83,10 @@ posture adjust
 
 ```bash
 # 忽略文件权限
-git config --global --add core.fileMode false 
+git config --global --add core.fileMode false
 ```
+
+> 使用```git config --global -l```或```git config --global -e```查看配置情况。
 
 ### <span id="312">(2) 代码风格的调整
 
@@ -106,6 +108,8 @@ cd {your_project} # notice: not cd posture project !
 
 posture unhook
 ```
+
+> 使用```git config --global -l```或```git config --global -e```查看配置情况。
 
 ### <span id="321">(1) checkout钩子</span>
 当使用```git checkout/git switch```命令时，会自动执行checkout钩子，如下图所示。
@@ -138,7 +142,7 @@ posture unhook
 <img width="800" alt="image" src="https://user-images.githubusercontent.com/35942268/190095654-565a82c1-455e-403d-8e56-adb8c7685b7c.png">
 </details>
 
-提交成功后会触发```post-commit```钩子，自动在```$POSTUREPATH/storage/```目录下生成一条以天为单位的```commit.${day}.log```commit日志文件，以实现每日工作统计等功能。
+提交成功后会触发```post-commit```钩子，自动在```$POSTURE_PATH/storage/```目录下生成一条以天为单位的```commit.${day}.log```commit日志文件，以实现每日工作统计等功能。
 
 ```text
 # 日志内容如下
@@ -169,10 +173,10 @@ posture unhook
 # <span id="4">四、卸载更新</span>
 
 ## <span id="41">1、卸载应用</span>
-如果需要卸载，在执行完以下命令后，手动删除```$POSTUREPATH```目录即可。
+如果需要卸载，在执行完以下命令后，手动删除```$POSTURE_PATH```目录即可。
 
 ```bash
-cd $POSTUREPATH && bash ./uninstall.sh
+cd $POSTURE_PATH && bash ./uninstall.sh
 ```
 
 <details>

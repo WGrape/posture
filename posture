@@ -1,9 +1,10 @@
 #!/bin/sh
-if [ "${POSTUREPATH}" == "" ]; then
-    echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
+
+if [ "${POSTURE_PATH}" == "" ]; then
+    echo "缺少POSTURE_PATH配置 (You missed the configuration of POSTURE_PATH)"
     exit 1
 fi
-. $POSTUREPATH/include/function.sh
+. $POSTURE_PATH/include/sdk.sh
 
 # start to adjust
 adjust(){
@@ -20,7 +21,9 @@ adjust(){
 
     # 2. code style adjust
     # copy .editorconfig.template to your project
-    cp $POSTUREPATH/include/editor/.editorconfig.template ./
+    if [ ! -f "./.editorconfig" ]; then
+        cp $POSTURE_PATH/template/.editorconfig.template ./.editorconfig
+    fi
 
     print_ok "> 完成 (done)"
 }
@@ -53,7 +56,7 @@ unhook(){
 # update your posture version
 update_version(){
     currentDir=$(pwd)
-    cd $POSTUREPATH && git pull && cd $currentDir
+    cd $POSTURE_PATH && git pull && cd $currentDir
     # 判断是否拉取成功
     if [ $? -ne 0 ]; then
         print_error "版本更新至最新版本失败 (Failed to update the version to the latest version)"
@@ -77,7 +80,7 @@ if [ "${COMMAND}" == "adjust" ]; then
     adjust
 elif [ "${COMMAND}" == "hook" ]; then
     # requirement: cd to your project, then run cmd: posture hook
-    hook $POSTUREPATH
+    hook $POSTURE_PATH
 elif [ "${COMMAND}" == "unhook" ]; then
     # requirement: cd to your project, then run cmd: posture unhook
     unhook

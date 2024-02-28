@@ -1,9 +1,10 @@
 #!/bin/sh
-if [ "${POSTUREPATH}" == "" ]; then
-    echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
+
+if [ "${POSTURE_PATH}" == "" ]; then
+    echo "缺少POSTURE_PATH配置 (You missed the configuration of POSTURE_PATH)"
     exit 1
 fi
-. $POSTUREPATH/include/function.sh
+. $POSTURE_PATH/include/sdk.sh
 
 print_logo
 echo "温馨提示: 请注意是否拉取了正确的分支 (Warm tips: Please pull the correct branch)"
