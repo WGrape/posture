@@ -78,15 +78,15 @@ cd {your_project} # notice: not cd posture project !
 posture adjust
 ```
 
-### <span id="311">(1) git配置
-在执行完```adjust```命令时，```posture```会自动执行以下操作，确保git配置保持一致。
+### <span id="311">(1) git配置调整
+在执行完```adjust```命令时，```posture```会自动执行以下操作，确保大家的git配置保持一致。
 
 ```bash
 # 忽略文件权限
 git config --global --add core.fileMode false 
 ```
 
-### <span id="312">(2) 代码规范
+### <span id="312">(2) 代码风格调整
 
 在执行完```adjust```命令后，在您的项目根目录下，会生成一个```.editorconfig```文件，它会为您的IDE设置统一的代码规范。
 
