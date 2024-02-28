@@ -34,4 +34,7 @@ else
 fi
 # ==================== end ====================
 
+echo ""
+echo "commit-msg check ok !"
+echo ""
 loading
