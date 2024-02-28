@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # print logo
-print_logo(){
+print_logo() {
     echo "\033[34m
 ==========================================================================
 '########:::'#######:::'######::'########:'##::::'##:'########::'########:
@@ -31,7 +31,7 @@ print_warn() {
 }
 
 # loading
-loading(){
+loading() {
     sleepSeconds=0.2
     if [ "${loadingSpeed}" == 1 ]; then
         sleepSeconds=0.2
@@ -59,7 +59,7 @@ loading(){
 }
 
 # send web hook message
-send_ding_message(){
+send_ding_message() {
     message=$1
     if [ "${message}" == "" ]; then
         print_error "钉钉消息不能为空 (The DingDing message must not be empty)"
@@ -74,7 +74,7 @@ send_ding_message(){
 }
 
 # write commit log
-write_commit_log(){
+write_commit_log() {
     datetime=$(date "+%Y-%m-%d/%H:%M:%S")
     project_name=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
 

@@ -7,7 +7,7 @@ fi
 . $POSTURE_PATH/include/sdk.sh
 
 # start to adjust
-adjust(){
+adjust() {
     if ! check_config; then
         print_error "adjust failed: check_config"
         exit 1
@@ -29,7 +29,7 @@ adjust(){
 }
 
 # start to set the global hook
-hook(){
+hook() {
     if [ $1 == "" ]; then
         print_error "缺少目录参数 (miss the directory param)"
         exit 1
@@ -48,13 +48,17 @@ hook(){
     print_warn "If your other projects don't need require the global Hooks, they can be reconfigured in the root directory of your other projects: git config core.hooksPath .git/hooks"
 }
 
+scan() {
+
+}
+
 # start to cancel the global hook
-unhook(){
+unhook() {
     git config --global core.hooksPath false
 }
 
 # update your posture version
-update_version(){
+update_version() {
     currentDir=$(pwd)
     cd $POSTURE_PATH && git pull && cd $currentDir
     # 判断是否拉取成功
@@ -66,7 +70,7 @@ update_version(){
 }
 
 # show status
-status(){
+status() {
     echo "The list of configuration"
     echo "=========================================================================="
     echo "> dingToken = ${dingToken}"
@@ -84,6 +88,9 @@ elif [ "${COMMAND}" == "hook" ]; then
 elif [ "${COMMAND}" == "unhook" ]; then
     # requirement: cd to your project, then run cmd: posture unhook
     unhook
+elif [ "${COMMAND}" == "scan" ]; then
+    # requirement: cd to your project, then run cmd: posture scan
+    scan
 elif [ "${COMMAND}" == "update" ]; then
     update_version
 elif [ "${COMMAND}" == "status" ]; then
