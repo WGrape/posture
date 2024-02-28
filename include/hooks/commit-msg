@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ "${POSTUREPATH}" == "" ]; then
-  echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
-  exit 1
+    echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
+    exit 1
 fi
 . $POSTUREPATH/include/function.sh
 
@@ -9,11 +9,11 @@ print_logo
 echo "温馨提示: 请务必在提交代码前确认分支是否正确 (Warm tips: please make sure the branch is correct before committing)"
 
 if [ "${protectMainSwitch}" == "on" ] ; then
-  BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
-  if [ "${BRANCH_NAME}" == "main" ] || [ "${BRANCH_NAME}" == "master" ]; then
-    print_error "禁止直接再主分支提交代码, 已中断! (You are not allowed to commit at main branch, has been stopped !)"
-    exit 1
-  fi
+    BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
+    if [ "${BRANCH_NAME}" == "main" ] || [ "${BRANCH_NAME}" == "master" ]; then
+        print_error "禁止直接再主分支提交代码, 已中断! (You are not allowed to commit at main branch, has been stopped !)"
+        exit 1
+    fi
 fi
 echo "> 提交本地 (your commit branch): \033[33m${BRANCH_NAME}\033[0m"
 ORIGIN_COMMIT=$(cat $1)
@@ -36,7 +36,5 @@ fi
 
 printf "\n"
 print_ok "commit-msg check successfully !\n"
-printf "\n"
 
 loading
-printf "\n"

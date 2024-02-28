@@ -1,35 +1,35 @@
 #!/bin/sh
 if [ "${POSTUREPATH}" == "" ]; then
-  echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
-  exit 1
+    echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
+    exit 1
 fi
 . $POSTUREPATH/include/function.sh
 
 COMMAND=$1
 if [ "${COMMAND}" == "hook" ]; then
-  # requirement: cd to your project, then run cmd: posture hook
-  hook $POSTUREPATH
+    # requirement: cd to your project, then run cmd: posture hook
+    hook $POSTUREPATH
 elif [ "${COMMAND}" == "unhook" ]; then
-  # requirement: cd to your project, then run cmd: posture unhook
-  unhook
+    # requirement: cd to your project, then run cmd: posture unhook
+    unhook
 elif [ "${COMMAND}" == "adjust" ]; then
-  # requirement: cd to your project, then run cmd: posture adjust
-  adjust
+    # requirement: cd to your project, then run cmd: posture adjust
+    adjust
 elif [ "${COMMAND}" == "status" ]; then
-  status
+    status
 elif [ "${COMMAND}" == "update" ]; then
-  update_version
+    update_version
 elif [ "${COMMAND}" == "help" ] || [ "${COMMAND}" == "" ]; then
-  print_logo
+    print_logo
 
-  echo "下面是posture支持的命令列表 (Here is support commands)"
-  echo "=========================================================================="
-  echo "  - hook:   设置全局钩子 (set the global git hooks)"
-  echo "  - adjust: 调整代码规范 (adjust the code specification)"
-  echo "  - update: 更新至最新版本 (update to latest version)"
-  echo "  - status: 展示posture的状态 (show the status of posture)"
-  echo "  - help:   查看帮助 (view help)"
-  echo ""
+    echo "下面是posture支持的命令列表 (Here is support commands)"
+    echo "=========================================================================="
+    echo "  - hook:   设置全局钩子 (set the global git hooks)"
+    echo "  - adjust: 调整代码规范 (adjust the code specification)"
+    echo "  - update: 更新至最新版本 (update to latest version)"
+    echo "  - status: 展示posture的状态 (show the status of posture)"
+    echo "  - help:   查看帮助 (view help)"
+    echo ""
 else
-  echo "不支持的命令: ${COMMAND} (Unknown command: ${COMMAND})"
+    echo "不支持的命令: ${COMMAND} (Unknown command: ${COMMAND})"
 fi

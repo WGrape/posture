@@ -1,7 +1,7 @@
 #!/bin/sh
 if [ "${POSTUREPATH}" == "" ]; then
-  echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
-  exit 1
+    echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
+    exit 1
 fi
 . $POSTUREPATH/include/function.sh
 
@@ -9,7 +9,7 @@ newBranch=$(git reflog | awk 'NR==1{ print $8; }')
 changeDirection=$(git reflog | awk 'NR==1{ print $6 " -> " $8; exit }')
 
 if [ "${newBranch}" == "" ] || [ "${changeDirection}" == "" ] ; then
-  exit 0
+    exit 0
 fi
 
 print_logo
