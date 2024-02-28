@@ -37,5 +37,6 @@ fi
 
 printf "\n"
 print_ok "commit-msg check successfully !"
+printf "\n"
 
 loading
