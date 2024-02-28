@@ -20,16 +20,16 @@ ORIGIN_COMMIT=$(cat $1)
 echo "> 提交信息 (your commit msg): \033[33m${ORIGIN_COMMIT}\033[0m"
 
 # ==================== start ====================
-# limit your commit message style
+# check your commit message style
 echo ""
-echo "limit your commit message style..."
+echo "检查提交信息格式 (check your commit message style)..."
 
 commit_msg_type=$(cat $1 | awk -F: '{print$1}')
 valid_commit_msg_type=("feat" "doc" "update" "fix" "init" "test" "chore") # update: 更新、优化等 | init: 指项目初始化 | ...
 if echo "${valid_commit_msg_type[@]}" | grep -q "${commit_msg_type}"; then
-    echo "> 1. The commit_msg_type is valid. [checked]"
+    echo "> 1. 提交类型正确 (commit_msg_type ok): ${commit_msg_type}"
 else
-    echo "> 1. The commit_msg_type(${commit_msg_type}) is not valid."
+    echo "> 1. 提交类型错误 (commit_msg_type error): ${commit_msg_type}"
     exit 1
 fi
 # ==================== end ====================
