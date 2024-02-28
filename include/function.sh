@@ -46,7 +46,7 @@ loading(){
         sleepSeconds=0.01
     fi
 
-    printf "\n\n"
+    printf "\n"
     b=''
     i=0
     while [ $i -le 100 ]
@@ -56,7 +56,7 @@ loading(){
         ((i=i+2))
         b+='#'
     done
-    printf "\n\n"
+    printf "\n"
 }
 
 # send web hook message
