@@ -77,12 +77,12 @@ send_ding_message(){
 write_commit_log(){
     day=$(date "+%Y%m%d")
     datetime=$(date "+%Y-%m-%d/%H:%M:%S")
-    projectName=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
-    commitUser=$1
-    commitBranch=$2
-    commitId=$3
-    commitMsg=$4
-    echo "${datetime} ${projectName} ${commitUser} ${commitBranch} ${commitId} ${commitMsg}" >> $POSTURE_PATH/storage/commit.${day}.log
+    project_name=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
+    commit_user=$1
+    commit_branch=$2
+    commit_id=$3
+    commit_msg=$4
+    echo "${datetime} ${project_name} ${commit_user} ${commit_branch} ${commit_id} ${commit_msg}" >> $POSTURE_PATH/storage/commit.${day}.log
 }
 
 # parse env file

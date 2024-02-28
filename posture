@@ -68,11 +68,11 @@ update_version(){
 # show status
 status(){
     echo "The list of configuration"
-    echo "> lang = ${lang}"
-    echo "The list of states"
-    echo "> version = ${version}"
+    echo "=========================================================================="
+    echo "> dingToken = ${dingToken}"
+    echo "> loadingSpeed = ${loadingSpeed}"
+    echo "> protectMainSwitch = ${protectMainSwitch}"
 }
-
 
 COMMAND=$1
 if [ "${COMMAND}" == "adjust" ]; then

@@ -151,7 +151,7 @@ posture unhook
 
 # 每行由6部分组成
 -------------------------------------------------------------
-| date | project | user | branch | commitId | commitMessage |
+| date | project | user | branch | commit_id | commitMessage |
 -------------------------------------------------------------
 ```
 
