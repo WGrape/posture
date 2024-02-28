@@ -124,6 +124,7 @@ hook(){
   chmod a+x ${projectDir}/include/hooks/pre-push
 
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
+  echo "hook successfully !"
   echo "If your other projects don't need require the global Hooks, they can be reconfigured in the root directory of your other projects: git config core.hooksPath .git/hooks"
 }
 
