@@ -16,23 +16,22 @@ if [ "${protectMainSwitch}" == "on" ] ; then
   fi
 fi
 echo "> 提交本地 (your commit branch): \033[33m${BRANCH_NAME}\033[0m"
-
-# 移除消息内容中的空格 sed s/[[:space:]]//g
-# ORIGIN_COMMIT=$(cat $1 | sed s/[[:space:]]//g)
 ORIGIN_COMMIT=$(cat $1)
 echo "> 提交信息 (your commit msg): \033[33m${ORIGIN_COMMIT}\033[0m"
 
-# ==================== limit your commit message style ====================
+# ==================== start ====================
+# limit your commit message style
+echo ""
+echo "limit your commit message style..."
 
 commit_msg_type=$(cat $1 | awk -F: '{print$1}')
 valid_commit_msg_type=("feat" "doc" "update" "fix" "init" "test" "chore") # update: 更新、优化等 | init: 指项目初始化 | ...
 if echo "${valid_commit_msg_type[@]}" | grep -q "${commit_msg_type}"; then
-    echo "The commit_msg_type is valid. [checked]"
+    echo "- The commit_msg_type is valid. [checked]"
 else
     echo "The commit_msg_type(${commit_msg_type}) is not valid."
     exit 1
 fi
-
-# ==================== limit end ====================
+# ==================== end ====================
 
 loading
