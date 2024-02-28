@@ -73,6 +73,8 @@ export PATH=$PATH:${POSTUREPATH}
 在团队开发中的任何阶段，都可以使用如下命令快速矫正git配置、代码规范等开发姿势，统一团队成员的开发环境。
 
 ```bash
+cd {your_project} # notice: not cd posture project !
+
 posture adjust
 ```
 
@@ -86,20 +88,22 @@ git config --global --add core.fileMode false
 
 ### <span id="312">(2) 代码规范
 
-工具目前支持```go/java/js/php/shell```五种语言的代码规范设置，在```config/config.sh```文件中配置```lang```项目语言即可，默认为```go```语言。
-
 在执行完```adjust```命令后，在您的项目根目录下，会生成一个```.editorconfig```文件，它会为您的IDE设置统一的代码规范。
 
 ## <span id="32">2、设置全局钩子</span>
 在开发前，请使用如下命令设置全局钩子。这样无论在哪个项目下，当使用git命令时，相应的钩子都会自动工作，实时监督我们在git流程中的操作，一旦出现姿势错误的情况，就会即时发出提醒并中断操作。
 
 ```bash
+cd {your_project} # notice: not cd posture project !
+
 posture hook
 ```
 
 当需要取消全局钩子时, 执行```unhook```命令即可
 
 ```bash
+cd {your_project} # notice: not cd posture project !
+
 posture unhook
 ```
 
