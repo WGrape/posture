@@ -45,15 +45,18 @@ posture是一个轻量可扩展的开发姿势监督与矫正工具，让您快�
 
 # <span id="2">二、快速安装</span>
 
-您可以先通过以下命令完成下载安装操作，如果出现```install successfully```提示，则说明安装成功。
+您可以先通过以下命令完成下载安装操作，如果出现```install successfully```提示，则说明安装成功。这时使用```posture```或```posture help```命令都可以查看使用帮助。
 
 ```bash
-git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh && posture
+git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh
 ```
 
 <details>
   <summary>查看使用示例</summary>
-  <img src="https://user-images.githubusercontent.com/35942268/190054375-4280aead-411a-404c-b068-c71da4241528.png">
+  ### 安装成功
+  <img width="500" alt="image" src="https://github.com/WGrape/posture/assets/35942268/0827c1a8-ec41-4275-b324-517c6f450e86">
+  ### 查看命令帮助
+  <img width="500" alt="image" src="https://github.com/WGrape/posture/assets/35942268/101cbd76-24f1-45f3-b92d-0f209458d902">
 </details>
 
 在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，自动创建```$POSTUREPATH```变量并添加到```$PATH```变量中，以确保您可以开始使用posture工具。
