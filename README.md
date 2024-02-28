@@ -53,9 +53,9 @@ git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.
 
 <details>
   <summary>查看使用示例</summary>
-  ### 安装成功
+  <h3>安装成功</h3>
   <img width="500" alt="image" src="https://github.com/WGrape/posture/assets/35942268/0827c1a8-ec41-4275-b324-517c6f450e86">
-  ### 查看命令帮助
+  <h3>查看命令帮助</h3>
   <img width="500" alt="image" src="https://github.com/WGrape/posture/assets/35942268/101cbd76-24f1-45f3-b92d-0f209458d902">
 </details>
 
