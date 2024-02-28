@@ -27,9 +27,9 @@ echo "limit your commit message style..."
 commit_msg_type=$(cat $1 | awk -F: '{print$1}')
 valid_commit_msg_type=("feat" "doc" "update" "fix" "init" "test" "chore") # update: 更新、优化等 | init: 指项目初始化 | ...
 if echo "${valid_commit_msg_type[@]}" | grep -q "${commit_msg_type}"; then
-    echo "- The commit_msg_type is valid. [checked]"
+    echo "1. The commit_msg_type is valid. [checked]"
 else
-    echo "The commit_msg_type(${commit_msg_type}) is not valid."
+    echo "1. The commit_msg_type(${commit_msg_type}) is not valid."
     exit 1
 fi
 # ==================== end ====================
