@@ -35,6 +35,6 @@ fi
 # ==================== end ====================
 
 printf "\n"
-print_ok "commit-msg check successfully !\n"
+print_ok "commit-msg check successfully !"
 
 loading
