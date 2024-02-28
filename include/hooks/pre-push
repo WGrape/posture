@@ -21,7 +21,7 @@ do
 
 	if [ ${BRANCH_NAME} != ${REMOTE_NAME} ]
 	then
-		echo "本地分支和推送的远程分支不一致，已中断! (The push branch not match local branch, has been stopped !)"
+		print_error "本地分支和推送的远程分支不一致，已中断! (The push branch not match local branch, has been stopped !)"
 		exit 1
 	fi
 done

@@ -11,7 +11,7 @@ echo "温馨提示: 请务必在提交代码前确认分支是否正确 (Warm ti
 if [ "${protectMainSwitch}" == "on" ] ; then
   BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
   if [ "${BRANCH_NAME}" == "main" ] || [ "${BRANCH_NAME}" == "master" ]; then
-    echo "禁止直接再主分支提交代码, 已中断! (You are not allowed to commit at main branch, has been stopped !)"
+    print_error "禁止直接再主分支提交代码, 已中断! (You are not allowed to commit at main branch, has been stopped !)"
     exit 1
   fi
 fi
@@ -29,13 +29,13 @@ valid_commit_msg_type=("feat" "doc" "update" "fix" "init" "test" "chore") # upda
 if echo "${valid_commit_msg_type[@]}" | grep -q "${commit_msg_type}"; then
     echo "> 1. 提交类型正确 (commit_msg_type ok): ${commit_msg_type}"
 else
-    echo "> 1. 提交类型错误 (commit_msg_type error): ${commit_msg_type}"
+    print_error "> 1. 提交类型错误 (commit_msg_type error): ${commit_msg_type}"
     exit 1
 fi
 # ==================== end ====================
 
 printf "\n"
-printf "commit-msg check successfully !\n"
+print_ok "commit-msg check successfully !\n"
 printf "\n"
 
 loading
