@@ -56,7 +56,7 @@ loading(){
         ((i=i+2))
         b+='#'
     done
-    printf "\n"
+    printf "\n\n"
 }
 
 # send web hook message
