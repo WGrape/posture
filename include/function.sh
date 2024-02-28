@@ -16,6 +16,21 @@ print_logo(){
 \033[0m"
 }
 
+# print warn message.
+print_ok() {
+    printf "\033[34m$1\033[0m"
+}
+
+# print error message.
+print_error() {
+    printf "\033[31m$1\033[0m"
+}
+
+# print warn message.
+print_warn() {
+    printf "\e[33m$1\e[0m"
+}
+
 # loading
 loading(){
   sleepSeconds=0.2
@@ -47,11 +62,11 @@ loading(){
 send_ding_message(){
   message=$1
   if [ "${message}" == "" ]; then
-    echo "钉钉消息不能为空 (The DingDing message must not be empty)"
+    print_error "钉钉消息不能为空 (The DingDing message must not be empty)"
     return 0
   fi
   if [ "${dingToken}" == "" ]; then
-      echo "钉钉Token不能为空 (The DingDing token must not be empty)"
+      print_error "钉钉Token不能为空 (The DingDing token must not be empty)"
       return 0
     fi
   curl -H 'Content-type: application/json' -d "{\"msgtype\":\"text\", \"text\": {\"content\":\"${message}\"}}" "https://oapi.dingtalk.com/robot/send?access_token=${dingToken}"
@@ -89,7 +104,7 @@ check_lang(){
 check_config(){
   check_lang
   if [ $? -ne 0 ]; then
-      echo "lang配置错误: ${lang} (configuration of lang is error: ${lang})"
+      print_error "lang配置错误: ${lang} (configuration of lang is error: ${lang})"
       exit 1
   fi
 }
@@ -97,21 +112,22 @@ check_config(){
 # start to adjust
 adjust(){
   if ! check_config; then
-      echo "adjust failed: check_config"
+      print_error "adjust failed: check_config"
       exit 1
   fi
 
-  echo "正在调整中 ... (posture is adjusting ...)"
+  echo "正在调整中 (posture is adjusting)..."
   echo "> 配置的语言为${lang} (your lang configuration is ${lang})"
   git config --global --add core.fileMode false
   cp $POSTUREPATH/include/editor/${lang}/.editorconfig ./
-  echo "> 完成 (done)"
+
+  print_ok "> 完成 (done)"
 }
 
 # start to set the global hook
 hook(){
   if [ $1 == "" ]; then
-    echo "缺少目录参数 (miss the directory param)"
+    print_error "缺少目录参数 (miss the directory param)"
     exit 1
   fi
 
@@ -124,8 +140,8 @@ hook(){
   chmod a+x ${projectDir}/include/hooks/pre-push
 
   # 如果个别项目不需要使用全局的Hook, 可以在项目的根目录下重新配置git hooksPath: git config core.hooksPath .git/hooks
-  echo "hook successfully !"
-  echo "If your other projects don't need require the global Hooks, they can be reconfigured in the root directory of your other projects: git config core.hooksPath .git/hooks"
+  print_ok "hook successfully !"
+  print_warn "If your other projects don't need require the global Hooks, they can be reconfigured in the root directory of your other projects: git config core.hooksPath .git/hooks"
 }
 
 # start to cancel the global hook
@@ -139,10 +155,10 @@ update_version(){
   cd $POSTUREPATH && git pull && cd $currentDir
   # 判断是否拉取成功
   if [ $? -ne 0 ]; then
-    echo "版本更新至最新版本失败 (Failed to update the version to the latest version)"
+    print_error "版本更新至最新版本失败 (Failed to update the version to the latest version)"
     exit 1
   fi
-  echo "版本更新至最新版本成功 (update to latest version successfully)"
+  print_ok "版本更新至最新版本成功 (update to latest version successfully)"
 }
 
 # show status
