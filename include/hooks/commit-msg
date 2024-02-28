@@ -39,3 +39,4 @@ printf "commit-msg check successfully !\n"
 printf "\n"
 
 loading
+printf "\n"
