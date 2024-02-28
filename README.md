@@ -53,9 +53,9 @@ git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.
 
 <details>
   <summary>查看使用示例</summary>
-  <h3>安装成功</h3>
+  <h4>安装成功</h4>
   <img width="500" alt="image" src="https://github.com/WGrape/posture/assets/35942268/0827c1a8-ec41-4275-b324-517c6f450e86">
-  <h3>查看命令帮助</h3>
+  <h4>查看命令帮助</h4>
   <img width="500" alt="image" src="https://github.com/WGrape/posture/assets/35942268/101cbd76-24f1-45f3-b92d-0f209458d902">
 </details>
 
@@ -97,7 +97,7 @@ git config --global --add core.fileMode false
 posture sethook
 ```
 
-当需要取消全局钩子时, 执行unsethook命令即可
+当需要取消全局钩子时, 执行```unsethook```命令即可
 
 ```bash
 posture unsethook

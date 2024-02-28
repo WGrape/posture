@@ -11,13 +11,13 @@ if [ "${COMMAND}" == "sethook" ]; then
 elif [ "${COMMAND}" == "unsethook" ]; then
   unsethook
 elif [ "${COMMAND}" == "adjust" ]; then
-  checkConfig && adjust
+  check_config && adjust
 elif [ "${COMMAND}" == "info" ]; then
-  showInfo
+  show_info
 elif [ "${COMMAND}" == "update" ]; then
-  updateVersion
+  update_version
 elif [ "${COMMAND}" == "help" ] || [ "${COMMAND}" == "" ]; then
-  printLogo
+  print_logo
 
   echo "Here is support commands"
   echo "  sethook: set the global git hooks"

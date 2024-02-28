@@ -9,6 +9,6 @@ branchName=$(git symbolic-ref --short -q HEAD)
 commitId=$(git log -1 HEAD --pretty=format:"%h")
 commitMsg=$(git log -1 HEAD --pretty=format:"%s" | sed s/[[:space:]]//g)
 commitUser=$(git log -1 HEAD --pretty=format:"%cn" | sed s/[[:space:]]//g)
-writeCommitLog ${commitUser} ${branchName} ${commitId} ${commitMsg}
+write_commit_log ${commitUser} ${branchName} ${commitId} ${commitMsg}
 
 exit 1

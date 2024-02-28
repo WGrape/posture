@@ -5,7 +5,7 @@ if [ "${POSTUREPATH}" == "" ]; then
 fi
 . $POSTUREPATH/include/function.sh
 
-printLogo
+print_logo
 echo "温馨提示: 请务必在提交代码前确认分支是否正确 (Warm tips: please make sure the branch is correct before committing)"
 
 if [ "${protectMainSwitch}" == "on" ] ; then

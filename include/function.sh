@@ -33,8 +33,8 @@ unsethook(){
 }
 
 # 检查配置
-checkConfig(){
-  checkLang
+check_config(){
+  check_lang
   if [ $? -ne 0 ]; then
       echo "lang配置错误: ${lang} (configuration of lang is error: ${lang})"
       exit 1
@@ -42,7 +42,7 @@ checkConfig(){
 }
 
 # 更新版本
-updateVersion(){
+update_version(){
   currentDir=$(pwd)
   cd $POSTUREPATH && git pull && cd $currentDir
   # 判断是否拉取成功
@@ -54,7 +54,7 @@ updateVersion(){
 }
 
 # 显示状态信息
-showInfo(){
+show_info(){
   echo "The list of configuration"
   echo "> lang = ${lang}"
   echo "The list of states"
@@ -62,7 +62,7 @@ showInfo(){
 }
 
 # 检查配置中的编程语言
-checkLang(){
+check_lang(){
   if [ "${lang}" == "go" ]; then
     return 0
   elif [ "${lang}" == "java" ]; then
@@ -78,7 +78,7 @@ checkLang(){
 }
 
 # 打印logo
-printLogo(){
+print_logo(){
   echo "\033[34m
 ==========================================================================
 '########:::'#######:::'######::'########:'##::::'##:'########::'########:
@@ -93,7 +93,7 @@ printLogo(){
 }
 
 # 发送钉钉消息
-sendDingMessage(){
+send_ding_message(){
   message=$1
   if [ "${message}" == "" ]; then
     echo "钉钉消息不能为空 (The DingDing message must not be empty)"
@@ -107,7 +107,7 @@ sendDingMessage(){
 }
 
 # 记录commit日志
-writeCommitLog(){
+write_commit_log(){
   day=$(date "+%Y%m%d")
   datetime=$(date "+%Y-%m-%d/%H:%M:%S")
   projectName=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
