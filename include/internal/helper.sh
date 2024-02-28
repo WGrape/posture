@@ -75,13 +75,16 @@ send_ding_message(){
 
 # write commit log
 write_commit_log(){
-    day=$(date "+%Y%m%d")
     datetime=$(date "+%Y-%m-%d/%H:%M:%S")
     project_name=$(git remote -v | head -n1 | awk '{print $2}' | sed 's/.*\///' | sed 's/\.git//')
+
     commit_user=$1
     commit_branch=$2
     commit_id=$3
     commit_msg=$4
+    commit_msg=$(echo "$commit_msg" | sed 's/@/ /g')
+
+    day=$(date "+%Y%m%d")
     echo "${datetime} ${project_name} ${commit_user} ${commit_branch} ${commit_id} ${commit_msg}" >> $POSTURE_PATH/storage/commit.${day}.log
 }
 

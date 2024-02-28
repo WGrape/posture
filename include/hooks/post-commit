@@ -6,10 +6,10 @@ if [ "${POSTURE_PATH}" == "" ]; then
 fi
 . $POSTURE_PATH/include/sdk.sh
 
+commit_user=$(git log -1 HEAD --pretty=format:"%cn" | sed s/[[:space:]]//g)
 branch_name=$(git symbolic-ref --short -q HEAD)
 commit_id=$(git log -1 HEAD --pretty=format:"%h")
-commit_msg=$(git log -1 HEAD --pretty=format:"%s")
-commit_user=$(git log -1 HEAD --pretty=format:"%cn" | sed s/[[:space:]]//g)
+commit_msg=$(git log -1 HEAD --pretty=format:"%s" | sed 's/ /@/g') # space will cause the parameters to be split into multiple arguments, so replace spaces with @ to ensure only one parameter.
 write_commit_log ${commit_user} ${branch_name} ${commit_id} ${commit_msg}
 
 exit 1
