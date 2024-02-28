@@ -48,7 +48,7 @@ posture是一个轻量可扩展的开发姿势监督与矫正工具，让您快�
 您可以先通过以下命令完成下载安装操作，如果出现```install successfully```提示，则说明安装成功。
 
 ```bash
-git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh
+git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.sh && posture
 ```
 
 <details>
