@@ -70,7 +70,7 @@ export PATH=$PATH:${POSTUREPATH}
 # <span id="3">三、如何使用</span>
 
 ## <span id="31">1、矫正开发姿势</span>
-在团队开发中的任何阶段，都可以使用如下命令快速矫正git配置、代码规范等开发姿势，统一团队成员的开发环境。
+在团队开发中的任何阶段，都可以使用如下命令快速矫正，它会自动对git配置、代码风格等几个方面进行调整，下面会详细介绍。
 
 ```bash
 cd {your_project} # notice: not cd posture project !
@@ -78,7 +78,7 @@ cd {your_project} # notice: not cd posture project !
 posture adjust
 ```
 
-### <span id="311">(1) git配置调整
+### <span id="311">(1) git配置的调整
 在执行完```adjust```命令时，```posture```会自动执行以下操作，确保大家的git配置保持一致。
 
 ```bash
@@ -86,7 +86,7 @@ posture adjust
 git config --global --add core.fileMode false 
 ```
 
-### <span id="312">(2) 代码风格调整
+### <span id="312">(2) 代码风格的调整
 
 在执行完```adjust```命令后，在您的项目根目录下，会生成一个```.editorconfig```文件，它会为您的IDE设置统一的代码规范。
 
