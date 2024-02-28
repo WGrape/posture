@@ -35,7 +35,7 @@ fi
 # ==================== end ====================
 
 printf "\n"
-printf "commit-msg check successfully !"
+printf "commit-msg check successfully !\n"
 printf "\n"
 
 loading
