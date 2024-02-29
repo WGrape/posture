@@ -1,5 +1,27 @@
 # Changelog
 
+## [1.7.0](https://github.com/WGrape/posture/compare/v1.6.0...v1.7.0) (2024-02-29)
+
+
+### Features
+
+* add env support and update design ([2950808](https://github.com/WGrape/posture/commit/295080881930fa825ecad5cb5a62e7986f95ed44))
+* add env support and update design ([1e80650](https://github.com/WGrape/posture/commit/1e80650ed5770449f6793dc61374e22a32fc27d6))
+* update install ([cb6c545](https://github.com/WGrape/posture/commit/cb6c54530fc8f84f532f94309a3275fe23748eb8))
+* 新增scan扫描功能 ([d892f93](https://github.com/WGrape/posture/commit/d892f934bf70958782a0733b3ed77cc87847486c))
+
+
+### Docs
+
+* make doc better ([5f3c570](https://github.com/WGrape/posture/commit/5f3c57081d4f12d7232fd80a4822423956700bba))
+* make doc better ([c7962d2](https://github.com/WGrape/posture/commit/c7962d2a47c360614dc29f66cd68ecd5fcd48bbe))
+* make doc better ([a788376](https://github.com/WGrape/posture/commit/a7883764b911521421de1eb23bdd3d4f04f5e694))
+* make doc better ([93ac252](https://github.com/WGrape/posture/commit/93ac252ada3199ab5b1e7a4dd138699db819b505))
+* make doc better ([ced9668](https://github.com/WGrape/posture/commit/ced96687d2257d8a0460e622f5fc4709f9618c23))
+* make doc better ([0a8d6db](https://github.com/WGrape/posture/commit/0a8d6dbf9d28ab114d652599330659293945cdc8))
+* make doc better ([f3d0318](https://github.com/WGrape/posture/commit/f3d031844a1efa616426a094ce7dee58cc3fd855))
+* make doc better ([e9d4ba2](https://github.com/WGrape/posture/commit/e9d4ba2b7f64d80d9ac9e5c9efe693bd0e28f445))
+
 ## [1.6.0](https://github.com/WGrape/posture/compare/v1.5.0...v1.6.0) (2022-10-22)
 
 
