@@ -49,7 +49,42 @@ hook() {
 }
 
 scan() {
+    project_path=$(pwd)
+    file_list=$(find . -maxdepth 1)
+    find_count=0
 
+    i=0
+    for file in $file_list; do
+        if [ "$file" == "." ] || [ "$file" == ".." ] || [ "$file" == "./.idea" ] || [ "$file" == "./.DS_Store" ]; then
+            continue
+        fi
+
+        ((i=i+1))
+        if [ -d "$file" ]; then
+            printf "[$i] scan dir：$file\n\n"
+        else
+            printf "[$i] scan file：$file\n\n"
+        fi
+
+        for keyword in "${scan_keywords[@]}"
+        do
+            grep_result=$(grep -ri "$keyword" "$file")
+
+            if [ -n "$grep_result" ]; then
+                ((find_count=find_count+1))
+                printf "${find_count}. keyword '$keyword' find:\n"
+                print_warn "$grep_result\n\n"
+            fi
+        done
+    done
+
+    if [ "$find_count" != 0 ]; then
+        print_error "Find some keywords, you must go to check your codes.\n"
+        return 1
+    else
+        print_ok "Not find any keywords, your codes is safety.\n"
+        return 0
+    fi
 }
 
 # start to cancel the global hook

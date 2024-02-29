@@ -17,7 +17,7 @@
     <img src="https://img.shields.io/badge/license-MIT-green.svg">   
 </p>
 
-<details>
+<!-- <details>
   <summary>目录</summary>
 
 - [一、项目介绍](#1)
@@ -36,7 +36,7 @@
 - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [2、版本更新](#42)
 - [五、项目贡献](#5)
 
-</details>
+</details>-->
 
 # <span id="1">一、项目介绍</span>
 posture是一个轻量可扩展的开发姿势监督与矫正工具，让您快速开始以正确的规范编写和管理代码，解决团队开发时代码百花齐放、Git提交信息乱写、Git误操作等一系列开发中的"姿势不正确"问题。
@@ -59,13 +59,15 @@ git clone https://github.com/WGrape/posture.git && cd posture && bash ./install.
   <img width="500" alt="image" src="https://github.com/WGrape/posture/assets/35942268/101cbd76-24f1-45f3-b92d-0f209458d902">
 </details>
 
-在安装成功后，会在您的```~/.bash_profile```文件中写入如下内容，自动创建```$POSTURE_PATH```变量并添加到```$PATH```变量中，以确保您可以开始使用posture工具。
+在安装成功后，会在您的posture项目安装目录下生成一个```.env```环境配置文件，用于对posture的一些行为控制。另外在```~/.bash_profile```文件中写入如下内容，自动创建```$POSTURE_PATH```变量并添加到```$PATH```变量中，以确保您可以开始使用posture工具。
 
 ```bash
 # Here is the config of posture
 export POSTURE_PATH={{the path of posture installation}}
 export PATH=$PATH:${POSTURE_PATH}
 ```
+
+这样，之后就可以通过```echo $POSTURE_PATH```命令查看posture的安装目录。
 
 # <span id="3">三、如何使用</span>
 
@@ -92,7 +94,24 @@ git config --global --add core.fileMode false
 
 在执行完```adjust```命令后，在您的项目根目录下，会生成一个```.editorconfig```文件，它会为您的IDE设置统一的代码规范。
 
-## <span id="32">2、设置全局钩子</span>
+## 2、扫描项目
+在开发的任何阶段，都可以使用如下命令快速扫描我们的任何项目，对一些关键字比如"密码"等进行扫描，防止出现安全性问题。
+
+```bash
+cd {your_project} # notice: not cd posture project !
+
+posture scan
+```
+
+在```posture```安装路径下的```.env```配置文件中有定义```scan_keywords```关键字数组，我们把需要检查的关键字输入进去，就可以实现自定义的扫描关键字需求。
+
+<details>
+  <summary>查看使用示例</summary>
+  <img width="347" alt="image" src="https://github.com/WGrape/posture/assets/35942268/3d9fbdca-32ad-4139-921f-65dc061c7b3f">
+  <img width="400" alt="image" src="https://github.com/WGrape/posture/assets/35942268/d6ef41a6-d061-419c-8226-fdd8a29d90d1">
+</details>
+
+## 3、设置全局钩子
 在开发前，请使用如下命令设置全局钩子。这样无论在哪个项目下，当使用git命令时，相应的钩子都会自动工作，实时监督我们在git流程中的操作，一旦出现姿势错误的情况，就会即时发出提醒并中断操作。
 
 ```bash
