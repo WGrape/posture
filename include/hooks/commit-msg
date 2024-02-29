@@ -1,0 +1,42 @@
+#!/bin/sh
+
+if [ "${POSTURE_PATH}" == "" ]; then
+    echo "缺少POSTURE_PATH配置 (You missed the configuration of POSTURE_PATH)"
+    exit 1
+fi
+. $POSTURE_PATH/include/sdk.sh
+
+print_logo
+echo "温馨提示: 请务必在提交代码前确认分支是否正确 (Warm tips: please make sure the branch is correct before committing)"
+
+if [ "${protectMainSwitch}" == "on" ] ; then
+    BRANCH_NAME=$(git symbolic-ref --short -q HEAD)
+    if [ "${BRANCH_NAME}" == "main" ] || [ "${BRANCH_NAME}" == "master" ]; then
+        print_error "禁止直接再主分支提交代码, 已中断! (You are not allowed to commit at main branch, has been stopped !)"
+        exit 1
+    fi
+fi
+echo "> 提交本地 (your commit branch): \033[33m${BRANCH_NAME}\033[0m"
+ORIGIN_COMMIT=$(cat $1)
+echo "> 提交信息 (your commit msg): \033[33m${ORIGIN_COMMIT}\033[0m"
+
+# ==================== start ====================
+# check your commit message style
+echo ""
+echo "检查提交信息格式 (check your commit message style)..."
+
+commit_msg_type=$(cat $1 | awk -F: '{print$1}')
+valid_commit_msg_type=("feat" "doc" "update" "fix" "init" "test" "chore") # update: 更新、优化等 | init: 指项目初始化 | ...
+if echo "${valid_commit_msg_type[@]}" | grep -q "${commit_msg_type}"; then
+    echo "> 1. 提交类型正确 (commit_msg_type ok): ${commit_msg_type}"
+else
+    print_error "> 1. 提交类型错误 (commit_msg_type error): ${commit_msg_type}"
+    exit 1
+fi
+# ==================== end ====================
+
+printf "\n"
+print_ok "commit-msg check successfully !"
+printf "\n"
+
+loading

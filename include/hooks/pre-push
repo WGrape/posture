@@ -1,28 +1,29 @@
 #!/bin/sh
-if [ "${POSTUREPATH}" == "" ]; then
-  echo "缺少POSTUREPATH配置 (You missed the configuration of POSTUREPATH)"
-  exit 1
-fi
-. $POSTUREPATH/include/function.sh
 
-printLogo
+if [ "${POSTURE_PATH}" == "" ]; then
+    echo "缺少POSTURE_PATH配置 (You missed the configuration of POSTURE_PATH)"
+    exit 1
+fi
+. $POSTURE_PATH/include/sdk.sh
+
+print_logo
 echo "温馨提示: 请务必在提交前确认提交分支是否正确 (Warm tips: please make sure the branch is correct before pushing)"
 
 while read local_ref local_sha remote_ref remote_sha
 do
-  BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+    BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
 	echo "> 本地分支 (your local branch): \033[33m${BRANCH_NAME}\033[0m"
 
 	# 如果分支有refs/heads/前缀(如refs/heads/main), 则需要截取后部分
-  REMOTE_REF=${remote_ref}
-  remote_ref_slices=(${REMOTE_REF//refs\/heads\// })
-  REMOTE_NAME=${remote_ref_slices[0]}
+    REMOTE_REF=${remote_ref}
+    remote_ref_slices=(${REMOTE_REF//refs\/heads\// })
+    REMOTE_NAME=${remote_ref_slices[0]}
 	echo "> 推送分支 (your push branch): \033[33m${REMOTE_NAME}\033[0m"
 
 	if [ ${BRANCH_NAME} != ${REMOTE_NAME} ]
 	then
-		echo "本地分支和推送的远程分支不一致，已中断! (The push branch not match local branch, has been stopped !)"
-		exit 1
+	    print_error "本地分支和推送的远程分支不一致，已中断! (The push branch not match local branch, has been stopped !)"
+	    exit 1
 	fi
 done
 
