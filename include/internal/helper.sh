@@ -15,7 +15,7 @@ print_logo() {
 \033[0m"
 }
 
-# print warn message.
+# print success message.
 print_ok() {
     printf "\033[34m$1\033[0m"
 }
