@@ -26,7 +26,7 @@ echo ""
 echo "检查提交信息格式 (check your commit message style)..."
 
 commit_msg_type=$(cat $1 | awk -F: '{print$1}')
-valid_commit_msg_type=("feat" "doc" "update" "fix" "init" "test" "chore") # update: 更新、优化等 | init: 指项目初始化 | ...
+valid_commit_msg_type=("feat" "doc" "update" "fix" "init" "test" "chore" "refactor") # update: 更新、优化等 | init: 指项目初始化 | ...
 if echo "${valid_commit_msg_type[@]}" | grep -q "${commit_msg_type}"; then
     echo "> 1. 提交类型正确 (commit_msg_type ok): ${commit_msg_type}"
 else
