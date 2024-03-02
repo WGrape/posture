@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.7.1](https://github.com/WGrape/posture/compare/v1.7.0...v1.7.1) (2024-03-02)
+
+
+### Docs
+
+* changelog ([92b1cbd](https://github.com/WGrape/posture/commit/92b1cbd9957771ed251e2dfe29021be1403d96c5))
+
+
+### Code Refactoring
+
+* add the new msg_type refactor ([077af9a](https://github.com/WGrape/posture/commit/077af9aebfc618500ddf858518574c3d0dc35fcc))
+
 ## [1.7.0](https://github.com/WGrape/posture/compare/v1.6.0...v1.7.0) (2024-02-29)
 
 
